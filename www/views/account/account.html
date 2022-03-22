@@ -1,0 +1,21 @@
+<ion-view class="account-view" cache-view="false">
+  <ion-header-bar class="account-header">
+    <h1 class="title">Account</h1>
+  </ion-header-bar>
+  <ion-pane>
+    <ion-tabs class="account-tabs tabs-top tabs">
+      <ion-tab title="Account" ui-sref="main.app.account.profile">
+        <ion-nav-view name="my-profile"></ion-nav-view>
+      </ion-tab>
+      <ion-tab title="Orders" ui-sref="main.app.account.orders">
+        <ion-nav-view name="my-orders"></ion-nav-view>
+      </ion-tab>
+      <ion-tab title="Bookings" ui-sref="main.app.account.bookings">
+        <ion-nav-view name="my-bookings"></ion-nav-view>
+      </ion-tab>
+      <ion-tab ng-if="user_type == 3" title="Favourite" ui-sref="main.app.account.fsalons">
+        <ion-nav-view name="fav-salons"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-pane>
+</ion-view>

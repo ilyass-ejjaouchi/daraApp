@@ -1,0 +1,58 @@
+<ion-view view-title="Login" class="login-bg">
+  <ion-content class="login">
+    <style>
+      .login {
+        position: absolute;
+      }
+      ion-content {
+        margin-bottom: 0 !important;
+      }
+      .overlay
+      {
+        position: relative;
+      }
+    </style>
+    <div class="overlay">
+    <div class="content">
+      <img src="img/logo.png" />
+      <h2>Visa App</h2>
+      <h4>Ionic Visa App</h4>
+      <h5>100% customizable for any Android & iOS apps.</h5>
+
+      <form method="post" ng-submit="doLogIn(loginForm)" name="loginForm" class="form-container" novalidate>
+
+      <div>
+        <div class="divider">
+          <div class="line left"></div>
+          <div class="line right"></div>
+          <div class="text">Sign in as a User</div>
+        </div>
+
+        <div class="center">
+          <div class="hardware">
+            <div class="list login-list">
+              <label class="item item-input">
+                <input type="text" name="email" ng-model="email" placeholder="Enter your email" required>
+              </label>
+              <label class="item item-input">
+                <input type="password" ng-model="password" name="password" placeholder="Enter your password" required>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="button icon-left button-positive" ng-disabled="loginForm.$invalid">Login</button>
+      </div>
+
+        <span class="padding assertive" style="display: block;" ng-if="error">{{error}}</span>
+
+        <!--<div class="alternative-actions">
+          <a class="action-link button button-small button-clear" ui-sref="intro.auth-forgot-password">Forgot Password?</a>
+          <a class="action-link button button-small button-clear" ui-sref="intro.auth-signup">Sign up</a>
+        </div>
+-->
+      </form>
+    </div>
+    </div>
+  </ion-content>
+</ion-view>

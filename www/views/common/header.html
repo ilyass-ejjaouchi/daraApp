@@ -1,0 +1,11 @@
+<ion-header-bar class="feed-header bar bar-header">
+	<div class="logo-container">
+		<img class="logo-image" ng-src="./img/feed/logo.png" src="./img/feed/logo.png">
+	</div>
+	<div class="buttons">
+		<button class="button button-clear cart-button" ui-sref="main.app.shopping-cart()" href="#/main/app/shopping-cart">
+			<span class="badge cart-badge ng-binding">{{getProductsInCart()}}</span>
+			<img class="cart-image" ng-src="./img/feed/cart-icon.png" src="./img/feed/cart-icon.png">
+		</button>
+	</div>
+</ion-header-bar>

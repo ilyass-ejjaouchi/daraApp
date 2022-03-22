@@ -1,0 +1,40 @@
+<ion-view>
+    <ion-nav-buttons side="right"></ion-nav-buttons>
+
+  <ion-content class="padding">
+
+          <h1 class="title text-center" > {{ 'REPORT' | translate }}</h1>
+
+      <ng-form name="form_1" method="post" class="wpcf7-form formins1" novalidate="">
+
+          <p>{{ 'YOUR_REG_NUMBER' | translate }}<br>
+              <span class="wpcf7-form-control-wrap Theirregistrationnumber"><input required ng-model="registration_number" type="text" name="registration_number" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="in1-reg-num" aria-required="true" aria-invalid="false"></span> </p>
+
+          <p>{{ 'DAMAGE_TO_YOUR_VEHICLE' | translate }}<br>
+              <span class="wpcf7-form-control-wrap text-78">
+                    <input type="text" required ng-model="damage" name="damage" value=""
+                           class="wpcf7-form-control wpcf7-text"
+                           id="in2-dam-your" aria-invalid="false"></span></p>
+          <p>{{ 'WHAT_HAPPENED' | translate }}<br>
+              <span class="wpcf7-form-control-wrap Theirregistrationnumber"><input required ng-model="what_happen" type="text" name="what_happen" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="in1-reg-num2" aria-required="true" aria-invalid="false"></span> </p>
+          <p>{{ 'YOUR_EMAIL' | translate }}<br>
+              <span class="wpcf7-form-control-wrap Youremail"><input ng-model="email" required type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" id="in1-your-email" aria-required="true" aria-invalid="false"></span> </p>
+
+
+         <p><button type="submit" ng-disabled="form_1.$invalid" ng-click="submit_form1(form_1)" class="button button-full button-positive ink">{{ 'SUBMIT' | translate }}</button></p>
+
+              <p class="note padding text-center  bold">{{ 'OTHERS_INVOLVED' | translate }} <b>{{ 'GOTO' | translate }} <a href="#/app/form_2"> >> {{ 'INSURANCE' | translate }}</a></b>.</p>
+          <div class="wpcf7-response-output wpcf7-display-none">
+
+          </div>
+      </ng-form>
+
+      <div class="row" class="animate-fade-slide-in">
+
+          <div class="col ink" style="text-align: center">
+              <img src="img/daracar.png" style="height: 80px;" />
+          </div>
+      </div>
+
+	</ion-content>
+</ion-view>

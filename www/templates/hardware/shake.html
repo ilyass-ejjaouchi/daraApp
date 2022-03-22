@@ -1,0 +1,17 @@
+<ion-view view-title="Shaking">
+  <ion-content scroll="false">
+  	<div class="center">
+  		<div class="hardware">
+  			<i class="icon icon-screen_rotation"></i>
+  			<h3>Shaking</h3>
+  			<h4>X: {{measurements.x}}</h4>
+            <h4>Y: {{measurements.y}}</h4>
+            <h4>Z: {{measurements.z}}</h4>
+  			<button class="button button-balanced" ng-click="startWatching()">Start Shaking</button>
+  			<button class="button button-balanced" ng-click="stopWatching()">Stop Shaking</button>
+
+  			<p class="note"><b>Note:</b> This network information is only works on real device. It will not work on browser.</p>
+  		</div>
+  	</div>
+  </ion-content>
+</ion-view>

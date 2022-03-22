@@ -1,0 +1,61 @@
+<ion-view class="signup-view auth-view" cache-view="false">
+  <ion-header-bar class="fashion-content-header">
+    <div class="buttons">
+      <button class="button button-clear back-button" ng-click="goBack()">Back</button>
+    </div>
+  </ion-header-bar>
+  <ion-content has-bouncing="false" style="background: white">
+    <div class="row form-row">
+      <div class="col">
+      <!--<a class="button button-block facebook-button" ng-click="doFacebookSignUp()">Sign up with Facebook</a>-->
+
+        <!--<span class="icon ion-android-person sign-up-icon"></span>-->
+        <span class="button button-block facebook-button" style="margin-top: 0">Sign Up</span>
+        <span class="form-divider"></span>
+        <form name="signup_form" class="form-container" novalidate>
+          <div class="input-list list list-inset">
+            <label class="item item-input">
+              <input type="text" placeholder="name" name="name" ng-model="name" required>
+            </label>
+            <label class="item item-input">
+              <input type="email" placeholder="email" name="email" ng-model="email" required>
+            </label>
+            <label class="item item-input">
+              <input type="password" placeholder="password" name="password" ng-model="password" required>
+            </label>
+            <label class="item item-input">
+              <input type="tel" placeholder="Phone" name="phone" ng-model="phone" required>
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Your Address" name="address" ng-model="address" required>
+            </label>
+            <!--<label class="item item-input" show-hide-container>
+              <input type="text" placeholder="password" name="password" ng-model="password" required show-hide-input>
+            </label>-->
+
+            <div class="list">
+
+              <label class="item item-input item-select">
+
+                  Your Country:
+
+                <select required ng-model="country"  ng-options="country.id as country.countryname for country in countries" >
+                  <option value="" disabled>Select One</option>
+                </select>
+              </label>
+
+            </div>
+          </div>
+          <p ng-show="error" class="message error">{{error}}</p>
+          <button type="submit" class="button button-block auth-action-button" ng-controller="SignupCtrl" ng-click="doSignUp(country)" ng-disabled="signup_form.$invalid">
+            Sign up
+          </button>
+        </form>
+        <div class="alternative-actions">
+          <a class="action-link button button-small button-clear" ng-click="showTerms()">Terms</a>
+          <a class="action-link button button-small button-clear" ng-click="showPrivacyPolicy()">Privacy policy</a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,43 @@
+<ion-view class="feed-view" cache-view="false">
+  <ion-header-bar class="feed-header">
+      <button class="button button-clear back-button" ng-click="goBack()">Back</button>
+    <div class="logo-container">
+      <img class="logo-image" ng-src="./img/feed/logo.png"/>
+      <!--<b style="color: white;font-size: 30px; font-weight: bold;margin-left: 20px">BAZAR</b>-->
+    </div>
+    <div class="buttons">
+      <button class="button button-clear cart-button" ui-sref="main.app.shopping-cart()">
+        <span class="badge cart-badge">{{getProductsInCart()}}</span>
+        <span class="ion-android-cart cart-image"></span>
+
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="categories-feeds-content" has-bouncing="false" delegate-handle="feeds-content">
+    <sliding-list>
+    	<ul center-edges class="sliding-list">
+            <sliding-item state="main.app.feed.fashion" class="active">
+              <a nav-transition="none" ui-sref="main.app.feed.fashion()">All</a>
+            </sliding-item>
+            <sliding-item  ng-repeat="category in categories">
+              <!-- <a nav-transition="none" ui-sref="main.app.feed.fashion()">{{category.categoryname}}</a> -->
+              <a nav-transition="none" ui-sref="main.app.feed.catp({catId: category.id})">{{category.categoryname}}</a>
+            </sliding-item>
+
+       <!-- <sliding-item state="main.app.feed.food">
+          <a nav-transition="none" ui-sref="main.app.feed.food()">Food</a>
+        </sliding-item>
+        <sliding-item state="main.app.feed.travel">
+          <a nav-transition="none" ui-sref="main.app.feed.travel()">Travel</a>
+        </sliding-item>
+        <sliding-item state="main.app.feed.deals">
+          <a nav-transition="none" ui-sref="main.app.feed.deals()">Deals</a>
+        </sliding-item>
+        <sliding-item state="main.app.feed.real-state">
+          <a nav-transition="none" ui-sref="main.app.feed.real-state()">Real State</a>
+        </sliding-item>-->
+    	</ul>
+    </sliding-list>
+    <ion-nav-view name="category-feed" class="category-feed"></ion-nav-view>
+  </ion-content>
+</ion-view>

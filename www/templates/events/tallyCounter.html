@@ -1,0 +1,26 @@
+<ion-view view-title="Tally Counter">
+	<ion-content class="">
+		<form ng-submit="submitCounter(frm)" novalidate="" name="frm" style="padding-top: 60px;">
+			<div class="dark-positive-bg positive center" style="font-size: 18px">Capacity : {{tallyCounter.venue_capicity}}</div>
+			<div class="list padding">
+				<div class="list card button button-full button-positive ink" style="padding: 60px 60px 100px;font-size: 70px">
+					<span>{{count}}</span>
+				</div>
+				<div class="row">
+					<div class="col col-50">
+						<!--<button class="button button-full button-positive ink" ng-click="count = count - 1" ng-disabled="count <= 0 ">-</button>-->
+						<button class="button button-full button-positive ink" ng-click="count = count-1" ng-disabled="count <= 0 ">-</button>
+					</div>
+					<div class="col col-50">
+						<!--<button class="button button-full button-positive ink" ng-click="count = count + 1" ng-disabled="count >= tallyCounter.venue_capicity ">+</button>-->
+						<button class="button button-full button-positive ink" ng-click="count = count+1" ng-disabled="count >= tallyCounter.venue_capicity ">+</button>
+					</div>
+				</div>
+				<div ng-if="count >= tallyCounter.venue_capicity" class="dark-positive-bg assertive center" style="font-size: 18px">You have reached the max limit ! </div>
+				<div ng-if="error" class="dark-positive-bg assertive center" style="font-size: 18px">{{error}}</div>
+
+			</div>
+		</form>
+	</ion-content>
+</ion-view>
+

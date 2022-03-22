@@ -1,0 +1,17 @@
+<ion-view view-title="Edit Todo">
+	<ion-content class="">
+		<form ng-submit="updateTodo(frm)" novalidate="" name="frm">
+	    <div class="list padding">
+	      <label class="item item-input item-floating-label">
+	        <input type="text" autocomplete="off" class="form-control" required placeholder="Add title" value="data.title" ng-model="data.title">
+	      </label>
+	      <label class="item item-input item-floating-label">
+	        <textarea autocomplete="off" class="form-control" rows="5" required placeholder="Add notes" value="data.notes" ng-model="data.notes"></textarea>
+	      </label>
+	    </div>
+	    <div class="padding">
+	        <button class="button button-full button-positive ink" ng-disabled="frm.$invalid">Save Todo</button>
+	    </div>
+	    </form>  
+	</ion-content>
+</ion-view>

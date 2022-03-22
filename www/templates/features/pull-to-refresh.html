@@ -1,0 +1,19 @@
+<ion-view view-title="Pull to Refresh">
+  <ion-content class=""> 
+    <ion-refresher
+      pulling-text="pull to refresh..."
+      on-refresh="loadmore()">
+    </ion-refresher>
+
+    <ion-list>
+      <ion-item ng-repeat="x in data" class="item-thumbnail-left">
+        <img ng-src="{{x.picture.medium}}">
+        <h2>{{x.name.title}} {{x.name.first}} {{x.name.last}}</h2>
+        <p>{{x.email}}</p>
+        <p>{{x.location.city}}</p>
+        <p>{{x.phone}}</p>            
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

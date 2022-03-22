@@ -1,0 +1,52 @@
+<ion-view view-title="Patrol Timing">
+<style>
+	.gif_img{
+		height: 200px;
+		width: 200px;
+		display: block;
+		object-fit: cover;
+		background: url(img/running.gif);
+		background-size: 200px;
+		background-repeat: no-repeat;
+	}
+</style>
+  <ion-content scroll="false">
+  	<div class="center">
+<div>
+
+
+		<!--<button class="button" ui-sref="app.patrol-notification()"></button>-->
+		<div class="row">
+			<div class="col col-100">
+				<button style="width: 200px" class="button button-block button-balanced" ng-disabled="start" ng-click="startPatrol()">Start Patrol</button>
+			</div>
+		</div>
+		<div class="row" ng-if="start">
+			<div class="col">
+				<span class="gif_img"></span>
+			</div>
+		</div>
+		<div class="row" ng-if="start">
+			<div class="col col-100">
+				<button style="width: 200px" class="button button-block button-calm" ng-disabled="!start" ng-click="stopPatrol()">Stop Patrol</button>
+			</div>
+		</div>
+</div>
+
+  		<!--<div class="hardware patrol-timing">
+  			<i class="icon ion-clock"></i>
+  			<h4>Patrol Timing</h4>
+  			<table align="center">
+			<tr>
+				<th>Start time of Patrol :</th>
+				<td>01:00</td>
+			</tr>
+			<tr>
+        <th>End time of Patrol :</th>
+        <td>01:20</td>
+			</tr>
+  			</table>
+  		</div>-->
+  	</div>
+  </ion-content>
+</ion-view>

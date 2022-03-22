@@ -1,0 +1,12 @@
+<ion-view view-title="Flashlight">
+  <ion-content scroll="false">
+  	<div class="center">
+  		<div class="hardware">
+  			<i class="icon ion-flash"></i>
+  			<h4>Flashlight is {{avail ? 'available' : 'not available'}}</h4>
+  			<button class="button button-balanced" ng-click="startFlash();">Flash {{on ? 'Off' : 'On'}}</button>
+  			<p class="note"><b>Note:</b> This flashlight is only works on real device. It will not work on browser.</p>
+  		</div>
+  	</div>
+  </ion-content>
+</ion-view>

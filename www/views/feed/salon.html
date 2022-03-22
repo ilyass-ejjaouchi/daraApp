@@ -1,0 +1,49 @@
+<ion-view class="feed-view feed-real-state-view feed-sub-view" cache-view="false">
+  <ion-header-bar class="feed-header bar bar-header">
+    <div class="logo-container">
+      <img class="logo-image" ng-src="./img/feed/logo.png" src="./img/feed/logo.png">
+    </div>
+    <div class="buttons">
+      <button class="button button-clear cart-button" ui-sref="main.app.shopping-cart()" href="#/main/app/shopping-cart">
+        <span class="badge cart-badge ng-binding">{{getProductsInCart()}}</span>
+        <img class="cart-image" ng-src="./img/feed/cart-icon.png" src="./img/feed/cart-icon.png">
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <!--<section ng-include="'views/common/sort-and-filters-bar.html'"></section>-->
+    <section ng-include="'views/search/search.html'"></section>
+    <!--<div class="products-row list">
+      <div class="item item-divider">
+        San Francisco, CA
+      </div>
+      <div class="real-state-product-container" ng-repeat="product in results = products">
+        <div class="row image-row">
+          <div class="col product-image-container">
+            <a class="product-anchor" ui-sref="main.app.salon.content({productId: product.id})">
+              <div multi-bg="[product.picture]" interval="3000">
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row description-row">
+          <div class="col">
+            <h2 class="product-price">
+              <a class="product-anchor">$ {{product.price}}</a>
+              &lt;!&ndash; <a class="product-anchor" ui-sref="main.app.feed.real-state.content({productId: product.id})">$ {{product.price}}</a> &ndash;&gt;
+            </h2>
+            <p class="product-address">
+              {{product.address}}
+            </p>
+          </div>
+          <div class="col col-33 amenities-col">
+            <i class="theme-icon icon-bed"></i>
+            <span>{{product.bedrooms}}</span>
+            <i class="theme-icon icon-toilet"></i>
+            <span>{{product.bathrooms}}</span>
+          </div>
+        </div>
+      </div>
+    </div>-->
+  </ion-content>
+</ion-view>

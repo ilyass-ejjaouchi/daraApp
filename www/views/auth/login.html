@@ -1,0 +1,63 @@
+<ion-view class="login-view auth-view" cache-view="false">
+    <ion-header-bar class="fashion-content-header">
+        <div class="buttons">
+            <button class="button button-clear back-button" ng-click="goBack()">Back</button>
+        </div>
+    </ion-header-bar>
+    <style>
+        .pre-img{
+            height: 100px;
+            padding: 0 !important;
+        }
+    </style>
+    <ion-content has-bouncing="false" style="background: white">
+        <div class="row images-row">
+            <div class="col images-outer-col">
+                <div class="row row-bottom logo-row" style="margin-top: 16%">
+                    <div class="col">
+                        <div style="margin: 0 auto;width: 35vh;">
+                            <pre-img ratio="_1_1" helper-class="square-image">
+                                <img style="width: 100%" class="logo-image" ng-src="./img/walkthrough/welcome_logo-Bazaar.png" spinner-on-load/>
+                            </pre-img>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row illustration-row">
+                  <div class="col">
+                    <div class="illustration-container">
+                      <pre-img ratio="_20_9" helper-class="square-image">
+                        <img class="illustration-image" ng-src="./img/walkthrough/welcome_illustration.png" spinner-on-load/>
+                        </pre-img>
+                    </div>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    <div class="row form-row">
+      <div class="col">
+<!--
+        <a class="button button-block facebook-button" ng-click="doFacebookLogIn()">Log in with Facebook</a>
+-->
+        <form name="login_form" class="form-container" novalidate>
+          <div class="input-list list list-inset">
+            <label class="item item-input">
+              <input type="email" placeholder="email" name="email" ng-model="user.email" required>
+            </label>
+            <label class="item item-input" show-hide-container>
+              <input type="password" placeholder="password" name="password" ng-model="user.password" required show-hide-input>
+            </label>
+          </div>
+          <ion-checkbox style="background: transparent; border: none; margin-top: 10px">Remember Me</ion-checkbox>
+          <p ng-show="error" class="message error">{{error}}</p>
+          <button type="submit" class="button button-block auth-action-button" ng-click="doLogIn()" ng-disabled="login_form.$invalid">
+            Log in
+          </button>
+        </form>
+        <div class="alternative-actions">
+          <a class="action-link button button-small button-clear" ui-sref="intro.auth-forgot-password()">Forgot Password?</a>
+          <a class="action-link button button-small button-clear" ui-sref="intro.auth-signup()">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

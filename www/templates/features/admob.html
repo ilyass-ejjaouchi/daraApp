@@ -1,0 +1,12 @@
+<ion-view view-title="Admob">
+  <ion-content scroll="false">
+    <div class="center">
+  		<div class="hardware">
+  			<i class="icon ion-social-usd"></i>
+  			<h4>Admob is {{avail ? 'available' : 'not available'}}</h4>
+  			<button class="button button-balanced" ng-disabled="!avail" ng-click="showAdmob();">{{on ? 'Hide' : 'Show'}} Admob</button>
+  			<p class="note"><b>Note:</b> This AdMob is only works on real device. It will not work on browser.</p>
+  		</div>
+  	</div>
+  </ion-content>
+</ion-view>

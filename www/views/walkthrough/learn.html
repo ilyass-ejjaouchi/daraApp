@@ -1,0 +1,29 @@
+<ion-view class="learn-view" cache-view="false">
+  <ion-header-bar class="feed-header">
+    <button class="button button-clear back-button" ng-click="goBack()">Back</button>
+  </ion-header-bar>
+  <ion-content class="learn-content" has-bouncing="false">
+    <div class="row slides-row">
+      <div class="col">
+        <!--<ion-slide-box class="learn-slider" ng-class="{'hide-pager':show_call_to_action_button}" show-pager="true" delegate-handle="getting-started-slides" pager-click="pagerClicked(index)" on-slide-changed="slideChanged($index)">
+          <ion-slide>
+            <section class="slide-learn learn-sub-view" ng-include="'views/walkthrough/slide-1.html'"></section>
+          </ion-slide>
+          <ion-slide>
+            <section class="slide-questions getting-started-sub-view" ng-include="'views/getting-started/slide-2.html'"></section>
+          </ion-slide>
+          <ion-slide>
+            <section class="slide-pick-categories getting-started-sub-view" ng-include="'views/getting-started/slide-3.html'"></section>
+          </ion-slide>
+        </ion-slide-box>-->
+        <section class="slide-learn learn-sub-view" ng-include="'views/walkthrough/slide-1.html'"></section>
+      </div>
+    </div>
+    <!--<div class="row actions-row" ng-show="show_call_to_action_button">-->
+    <div class="row actions-row">
+      <div class="col">
+        <a class="button button-full action-button" ui-sref="main.app.account.profile()">My Account</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

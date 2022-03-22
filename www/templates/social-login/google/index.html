@@ -1,0 +1,29 @@
+<ion-view view-title="Google Connect" class="login-bg">
+  <ion-content class="login">
+    <div class="overlay"></div>
+    <div class="content">
+        <img src="img/logo.png" />
+        <h2>visa</h2>
+        <h4>Ionic Premium Multipurpose Template</h4>
+        <h5>100% customizable for any Android & iOS apps.</h5>    
+    
+        <div ng-if="!isGPlogin">
+            <div class="divider">
+                <div class="line left"></div>
+                <div class="line right"></div>
+                <div class="text">Google Connect API</div>
+            </div>
+            <button class="button icon-left ion-social-google button-assertive" ng-click="GPlogin()">Connect with Google</button>
+        </div>
+        <div ng-if="isGPlogin">
+            <div class="divider">
+                <div class="line left"></div>
+                <div class="line right"></div>
+                <div class="text">Connect data with Google</div>
+            </div>
+            <button class="button icon-left ion-social-google button-assertive" ui-sref="app.gpprofile">Go to Google App</button>
+        </div>
+        <p class="note">Only works on your real device, not in browser</p>
+    </div>
+  </ion-content>
+</ion-view>

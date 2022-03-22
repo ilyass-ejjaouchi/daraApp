@@ -1,0 +1,43 @@
+<ion-view>
+    <ion-nav-buttons side="right"></ion-nav-buttons>
+
+  <ion-content class="padding">
+
+          <h1 class="title text-center">{{ 'LOCATION' | translate }}</h1>
+
+      <form name="location" method="post" class="wpcf7-form locationform" novalidate="">
+          <div style="display: none;">
+              <input type="hidden" name="_wpcf7" value="363">
+              <input type="hidden" name="_wpcf7_version" value="4.7">
+              <input type="hidden" name="_wpcf7_locale" value="en_US">
+              <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f363-o1">
+              <input type="hidden" name="_wpnonce" value="d0ed730003">
+          </div>
+          <p>
+              {{ 'GET_MYPOS_BTN' | translate }}
+          </p>
+          <p>{{ 'ROAD_NAME' | translate }}<br>
+              <span class="wpcf7-form-control-wrap text-790"><input ng-model="road" required type="text" name="road"  size="40" id="loc-road" aria-required="true" aria-invalid="false"></span> </p>
+          <p>{{ 'TRAVEL_DIRECTION' | translate }}<br>
+              <span class="wpcf7-form-control-wrap text-893"><input ng-model="directions" required type="text" name="directions"  size="40" id="loc-dir" aria-required="true" aria-invalid="false"></span> </p>
+          <p>{{ 'POSITION' | translate }}<br>
+              <span class="wpcf7-form-control-wrap text-254"><input ng-model="my_location" required type="text" name="my_location"  size="40" id="loc-pos" ng-value="my_location" aria-required="true" aria-invalid="false"></span> </p>
+
+          <p>{{ 'YOUR_EMAIL' | translate }}<br>
+              <span class="wpcf7-form-control-wrap email-591"><input ng-model="email" required type="email" name="email" size="40" id="loc-your-email" aria-required="true" aria-invalid="false"></span> </p>
+          <p><button type="button" ng-click="show_map(map) ; showme=true" class="button button-full button-positive ink">Get My Position</button></p>
+          <p><button type="submit" ng-click="location_form(location)" class="button button-full button-positive ink">{{ 'SUBMIT' | translate }}</button></p>
+          <div class="wpcf7-response-output wpcf7-display-none"></div>
+          <div id="map" ng-show="showme" data-tap-disabled="true" style="height: 350px"></div>
+      </form>
+      <p><b>{{ 'GOTO' | translate }} <a href="#/app/page/169"> >> {{ 'PHOTOS' | translate }}</a></b></p>
+
+      <div class="row" class="animate-fade-slide-in">
+
+          <div class="col ink" style="text-align: center">
+              <img src="img/daracar.png" style="height: 80px;" />
+          </div>
+      </div>
+
+	</ion-content>
+</ion-view>

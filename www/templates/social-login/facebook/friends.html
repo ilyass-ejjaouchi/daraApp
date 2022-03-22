@@ -1,0 +1,14 @@
+<ion-view view-title="Facebook Friends" class="">
+  <ion-content class="fb-friends">   
+  	<ion-refresher
+        on-refresh="loadFriends()">
+    </ion-refresher>
+  	<ion-list>
+		<ion-item ng-repeat="x in friends" class="item item-avatar">
+			<img src="{{x.picture.data.url}}">
+			<h2>{{x.name}}</h2>
+		</ion-item>
+	</ion-list>
+	<ion-infinite-scroll on-infinite="loadMoreFriends()" distance="10%" ng-if="more"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

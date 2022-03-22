@@ -1,0 +1,7 @@
+<ion-list class="size-options-list">
+  <ion-radio name="chosen_size" ng-click="changeSize({{product.price}})" ng-model="chosen_size" ng-value="'{{(product.price)}}'">XS</ion-radio>
+  <ion-radio name="chosen_size" ng-click="changeSize({{(product.price + 100)}})" ng-model="chosen_size" ng-value="'{{(product.price + 100)}}'">S</ion-radio>
+  <ion-radio name="chosen_size" ng-click="changeSize('{{(product.price + 200)}}')" ng-model="chosen_size" ng-value="'{{(product.price + 200)}}'">M</ion-radio>
+  <ion-radio name="chosen_size" ng-click="changeSize('{{(product.price + 300)}}')" ng-model="chosen_size" ng-value="'{{(product.price + 300)}}'">L</ion-radio>
+  <ion-radio name="chosen_size" ng-click="changeSize('{{(product.price + 400)}}')" ng-model="chosen_size" ng-value="'{{(product.price + 400)}}'">XL</ion-radio>
+</ion-list>

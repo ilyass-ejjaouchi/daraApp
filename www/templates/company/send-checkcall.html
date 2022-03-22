@@ -1,0 +1,27 @@
+<ion-view view-title="Send Check Calls">
+    <ion-content class="">
+        <!--<div class="wrapper" ng-controller="DocCtrl">
+         <h1>{{pdfName}}</h1>
+         <ng-pdf template-url="templates/events/partials/viewer.html" canvasid="pdf" scale="page-fit" page=13></ng-pdf>
+        </div>-->
+        <div class="list card">
+            <h4 class="border-top positive-bg padding text-center">Select Guard</h4>
+            <div class="list card">
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Send Check Call to
+                    </div>
+                    <select required ng-model="token"  ng-options="user.device_token as user.name for user in users" >
+                        <option value="all" selected>All Guards</option>
+                    </select>
+                </label>
+
+            </div>
+            <div class="padding">
+                <button ng-controller="CheckCalls" class="button button-full button-positive ink" ng-click="sendCheckCall(token)">Send Check Call</button>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

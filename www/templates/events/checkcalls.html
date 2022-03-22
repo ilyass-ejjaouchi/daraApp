@@ -1,0 +1,33 @@
+<ion-view view-title="Check Calls">
+    <ion-content class="">
+        <!--<div class="wrapper" ng-controller="DocCtrl">
+         <h1>{{pdfName}}</h1>
+         <ng-pdf template-url="templates/events/partials/viewer.html" canvasid="pdf" scale="page-fit" page=13></ng-pdf>
+        </div>-->
+        <div class="list card">
+            <h4 class="border-top positive-bg padding center">Your Check Calls</h4>
+            <div class="list" ng-init="id = 0">
+                <span class="item calm-border padding item-icon-right" ng-repeat="x in data">
+                 <h2 ng-if="isCompany">From: {{x.guard_id}}
+                     <span ng-if="x.status == 1" class="positive pull-right">Accepted</span>
+                     <span ng-if="x.status == 0" class=" assertive pull-right">Missed</span>
+                     <h2>
+                         <span>Date: {{dateParse(x.created_at) | date:'dd-M-yyyy'}}</span>
+                         <span>On: {{dateParse(x.created_at) | date:'hh:mm a'}}</span>
+                     </h2>
+                 </h2>
+
+                 <h2 ng-if="!isCompany"><span>Date: {{dateParse(x.created_at) | date:'dd-M-yyyy'}}</span> <span>On: {{dateParse(x.created_at) | date:'hh:mm a'}}</span>
+                     <span ng-if="x.status == 1" class="positive pull-right">Accepted</span>
+                     <span ng-if="x.status == 0" class=" assertive pull-right">Missed</span>
+                 </h2>
+
+                </span>
+            </div>
+            <div class="text-center padding assertive" ng-if="data.length == 0">No Item Found!</div>
+        </div>
+        <div ng-if="isCompany" class="padding">
+            <button class="button button-full button-positive ink" ui-sref="app.send-checkcall()">Send Check Call</button>
+        </div>
+    </ion-content>
+</ion-view>

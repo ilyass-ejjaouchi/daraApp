@@ -1,0 +1,19 @@
+<ion-view view-title="Product Detail">
+	<ion-header-bar class="bar-dark bar bar-header">
+		<div class="buttons">
+			<button ng-click="closeModal()" class="button back-button buttons button-clear header-item"><i class="icon ion-android-arrow-back"></i>
+				<span class="back-text" style="transform: translate3d(0px, 0px, 0px);"></span></button>
+		</div>
+		<h1 class="title">NewsLetter Detail</h1>
+	</ion-header-bar>
+  <ion-content class="ecommerce">
+
+    <div class="item item-divider" style="text-align: center; text-transform: capitalize">
+		{{detail.title}}
+	</div>
+	<div class="padding">
+		<p>{{detail.message}}</p>
+	</div>
+
+  </ion-content>
+</ion-view>

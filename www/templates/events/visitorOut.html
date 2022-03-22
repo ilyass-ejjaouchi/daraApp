@@ -1,0 +1,21 @@
+<ion-view view-title="Guard's Weekly Rota">
+  <ion-header-bar class="bar-dark bar bar-header">
+    <div class="buttons">
+      <button ng-click="closeModal()" class="button back-button buttons button-clear header-item"><i class="icon ion-android-arrow-back"></i>
+        <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"></span></button>
+    </div>
+    <h1 class="title">Visitor Out</h1>
+  </ion-header-bar>
+  <ion-content class="">
+    <ion-list class="list-with-border">
+
+      <ion-item class="daily-occurrence-item" ng-repeat="x in data"  ng-if="x.in_timing == x.out_timing">
+        <span>
+          <p>{{x.visitor_name}}</p>
+
+          <button class="button button-balanced button-full" ng-click="visitorOut(x.id)">Remove</button>
+        </span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

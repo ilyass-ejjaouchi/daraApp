@@ -1,0 +1,19 @@
+<ion-view view-title="Payslips">
+	<ion-content class="">
+		<!--<div class="wrapper" ng-controller="DocCtrl">
+			<h1>{{pdfName}}</h1>
+			<ng-pdf template-url="templates/events/partials/viewer.html" canvasid="pdf" scale="page-fit" page=13></ng-pdf>
+		</div>-->
+		<div class="list card">
+			<h4 class="border-top positive-bg padding center">Your Payslips</h4>
+			<div class="list" ng-init="id = 0">
+				<a class="item calm-border padding item-icon-right" ng-repeat="x in data" ng-click="download(x.payslip)">
+					Payslip {{$index+1}}
+					<i class="icon ion-ios-arrow-thin-right"></i>
+				</a>
+			</div>
+			<div class="text-center padding assertive" ng-if="data.length == 0">No Item Found!</div>
+		</div>
+	</ion-content>
+</ion-view>
+

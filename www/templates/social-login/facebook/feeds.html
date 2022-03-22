@@ -1,0 +1,29 @@
+<ion-view view-title="Facebook Feeds" class="">
+  <ion-content class="social">   
+    <ion-refresher
+        on-refresh="loadFeeds()">
+    </ion-refresher>
+    <ion-list>
+        <ion-item ng-repeat="x in feeds">
+            <div class="item-avatar">
+                <div class="img" style="background-image: url(https://graph.facebook.com/{{x.from.id}}/picture)"></div>
+                <div class="user">
+                    <span class="pull-right">{{x.created_time | ago}}</span>
+                    <h3>{{x.from.name}}</h3>
+                </div>
+            </div>
+            <div class="item-featured">
+                <div class="img" style="background-image: url({{x.full_picture}});"></div>            
+            </div>
+            <div class="item-body">                
+                <div class="stat">
+                  <a href="#" class="subdued">{{x.likes.summary.total_count}} Likes</a>
+                  <a class="subdued">{{x.comments.summary.total_count}} Comments</a>
+                </div>
+                <div class="content" ng-bind-html="x.message"></div>                          
+            </div>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMoreFeeds()" distance="10%" ng-if="more"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

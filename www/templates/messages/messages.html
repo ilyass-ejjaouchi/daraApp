@@ -1,0 +1,57 @@
+<ion-view title="Messages">
+<style>
+  ion-content
+  {
+    margin-bottom: 0 !important;
+  }
+</style>
+  <ion-content class="has-header">
+
+    <div ng-if="!isCompany" class="list padding" ng-if="data.length != 0">
+      <li class="item item-text-wrap no-border" ng-class="{'current-user' : x.type == 1, 'not-current-user':x.type==2}" ng-repeat="x in data">
+        <div class="msg">
+          <div class="details padding">
+            <p>
+              <div class="user">{{x.type == 1 ? companyName : x.user_id}}</div>
+              <div class="message">{{x.message}}</div>
+            </p>
+            <small>{{x.created_at}}</small>
+          </div>
+        </div>
+      </li>
+      </div>
+      <div ng-if="isCompany" class="list padding" ng-if="data.length != 0">
+        <li class="item item-text-wrap no-border" ng-class="{'not-current-user' : x.type == 1, 'current-user':x.type==2}" ng-repeat="x in data">
+          <div class="msg">
+            <div class="details padding">
+              <p>
+                <div class="user">{{x.type == 1 ? companyName : x.user_id}}</div>
+                <div class="message">{{x.message}}</div>
+              </p>
+              <small>{{x.created_at}}</small>
+            </div>
+          </div>
+        </li>
+    </div>
+
+    <div ng-if="data.length == 0" class="padding assertive center">
+      No Messages Yet!
+    </div>
+
+    <!--<div class="card" ng-if="!room_ctrl.messages.length">
+      <div class="item item-text-wrap">
+        No messages yet.
+      </div>
+    </div>-->
+    <div ng-if="!isCompany" class="bar bar-positive item-input-inset">
+
+      <label class="item-input-wrapper">
+        <input type="text" id="message" name="message" required ng-model="message" placeholder="Type message">
+      </label>
+      <button class="button button-icon icon ion-android-send send-message" ng-click="sendMessage(message)" ng-disabled="!message" type="submit"></button>
+    </div>
+  </ion-content>
+
+
+
+</ion-view>

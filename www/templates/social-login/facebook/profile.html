@@ -1,0 +1,48 @@
+<ion-view view-title="Facebook Profile" class="">
+  <ion-content class="me">
+    <div class="cover" style="background-image: url({{me.cover.source}});">
+        <div class="profile">
+            <div class="img" style="background-image: url({{me.picture}});"></div>
+            <div class="name">{{me.name}}</div>
+        </div>
+    </div>
+    <ion-list>
+		<ion-item class="item item-icon-left">
+			<i class="icon ion-card"></i>
+			{{me.id}}
+		</ion-item>
+		<ion-item class="item item-icon-left">
+			<i class="icon ion-email"></i>
+			{{me.email}}
+		</ion-item>
+		<ion-item class="item item-icon-left">
+			<i class="icon ion-male"></i>
+			{{me.gender}}
+		</ion-item>
+		<!-- <ion-item class="item item-icon-left">
+			<i class="icon ion-egg"></i>
+			{{me.birthday}}
+		</ion-item> -->
+		<ion-item class="item item-divider">
+			More API
+		</ion-item>
+		<ion-item class="item item-icon-left item-icon-right ink" ui-sref="app.fbfeeds">
+			<i class="icon ion-android-list"></i>
+			View Timeline Feeds
+			<i class="icon ion-ios-arrow-forward"></i>
+		</ion-item>
+		<ion-item class="item item-icon-left item-icon-right ink" ui-sref="app.fbfriends">
+			<i class="icon ion-person-stalker"></i>
+			View Friends List
+			<i class="icon ion-ios-arrow-forward"></i>
+		</ion-item>
+		<ion-item class="item item-divider">
+			Exit Facebook API
+		</ion-item>
+		<ion-item class="item item-icon-left" ng-click="fbLogout();">
+			<i class="icon ion-android-exit"></i>
+			Logout
+		</ion-item>
+	</ion-list>
+  </ion-content>
+</ion-view>

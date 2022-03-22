@@ -1,0 +1,64 @@
+<ion-view view-title="Material Motion Element">
+	<ion-content class="padding">
+		<h4 class="no-border no-padding-bottom">List Motions</h4>
+		<strong>Tap an item</strong>
+		<ion-list class="animate-blinds">
+            <ion-item nav-clear="" menu-close="" class="item-avatar item in done" ng-click="blinds();">
+                <img src="img/logo.png">
+                <h2>.animate-blinds</h2>
+                <p>ionic.material.motion.blinds();</p>
+            </ion-item>
+            <ion-item nav-clear="" menu-close="" class="item-avatar item in done" ng-click="ripple();">
+                <img src="img/logo.png">
+                <h2>.animate-ripple</h2>
+                <p>ionic.material.motion.ripple();</p>
+            </ion-item>
+            <ion-item nav-clear="" menu-close="" class="item-avatar item in done" ng-click="fadeSlideIn();">
+                <img src="img/logo.png">
+                <h2>.animate-fade-slide-in</h2>
+                <p>ionic.material.motion.fadeSlideIn();</p>
+            </ion-item>
+            <ion-item nav-clear="" menu-close="" class="item-avatar item in done" ng-click="fadeSlideInRight();">
+                <img src="img/logo.png">
+                <h2>.animate-fade-slide-in-right</h2>
+                <p>ionic.material.motion.fadeSlideInRight();</p>
+            </ion-item>
+	    </ion-list>
+
+	    <h4 class="no-padding-bottom">HTML</h4>
+	    <strong>Add an animation class to your &lt;ion-list&gt;</strong>
+	    <div class="code padding">
+&lt;ion-list <span class="balanced-900 bold balanced-100-bg">class="animate-ripple"</span>&gt;<br>
+    &lt;ion-item nav-clear menu-close class="item-icon-right item-avatar"&gt;<br>
+        &lt;img src="img/logo.png"&gt;<br>
+        &lt;h2&gt;List title&lt;/h2&gt;<br>
+        &lt;p&gt;List description&lt;/p&gt;<br>
+    &lt;/ion-item&gt;<br>
+    (...)<br>
+&lt;/ion-list&gt;
+        </div>
+        <p><strong>Animation classes:</strong> animate-blinds, animate-ripple, animate-fade-slide-in, animate-fade-slide-in-right</p>
+
+        <h4 class="no-padding-bottom">JS</h4>
+        <strong>Invoke after your list has been added to the DOM</strong>
+        <br><br>
+        (e.g. in your controller)
+        <div class="code energized-900 bold energized-100-bg padding">ionic.material.motion.ripple();</div>
+        <br>
+        <p><strong>Motion methods:</strong> .blinds(), .ripple(), .fadeSlideIn(), .fadeSlideInRight()</p>
+
+        <h4 class="no-padding-bottom">API Options</h4>
+        <strong>Each animation can be customized</strong>
+        <p>Use a configuration object to tune the animation.</p>
+        <div class="code calm-900 calm-100-bg padding"><strong>var config = {<br>
+    finishDelayThrottle: 2,<br>
+    finishSpeedPercent: 0.5,<br>
+    leftOffsetPercentage: 0.8,<br>
+    selector: '#my-list',<br>
+    startVelocity: 1100<br>
+};</strong><br><br>
+ionic.material.motion.ripple(<strong>config</strong>);
+</div>
+
+	</ion-content>
+</ion-view>

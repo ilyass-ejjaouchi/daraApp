@@ -1,0 +1,57 @@
+<ion-view view-title="Opening and Closing Check">
+	<ion-content class="padding">
+		<h4>Cariocca Business Park, 2 Sawley Road, Miles Platting, M40 8BB</h4>
+
+    <form name="checks" ng-submit="openingClosingCheck(checks)" novalidate>
+
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Going To
+        </div>
+        <select ng-model="going_to" required>
+          <option disabled  ng-selected="true">Please Select One</option>
+          <option>Open</option>
+          <option>Close</option>
+        </select>
+      </label>
+      <div class="item item-checkbox">
+        <label class="checkbox">
+          <input type="checkbox" ng-model="toilet_check" ng-required="!why">
+        </label>
+        Toilets
+      </div>
+      <div class="item item-checkbox">
+        <label class="checkbox">
+          <input type="checkbox" ng-model="fire_exits_clear" ng-required="!why">
+        </label>
+        Fire exits are clear
+      </div>
+      <div class="item item-checkbox">
+        <label class="checkbox">
+          <input type="checkbox" ng-model="no_hazards" ng-required="!why">
+        </label>
+        No hazards
+      </div>
+      <div class="item item-checkbox">
+        <label class="checkbox">
+          <input type="checkbox" ng-model="why">
+        </label>
+        Not Safe to Open
+      </div>
+
+      <label class="item item-input item-floating-label" ng-if="why">
+        <span class="input-label">Reason why?</span>
+        <textarea ng-model="$parent.reason" ng-required="why" placeholder="Reason why?" rows="5"></textarea>
+      </label>
+
+      <button type="submit" class="button button-balanced button-full" ng-disabled="checks.$invalid">Submit</button>
+
+
+    </div>
+
+
+    </form>
+
+	</ion-content>
+</ion-view>

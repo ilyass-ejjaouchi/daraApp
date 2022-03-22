@@ -1,0 +1,17 @@
+<ion-view view-title="Real Push Notification">
+ 	<ion-content scroll="false">
+ 	<div class="center">
+  		<div class="hardware">
+  			<i class="icon ion-android-notifications"></i>
+  			<h4>Push Notification</h4>
+  			<div class="list">
+  				<label class="item item-input">
+  					<input type="text" placeholder="Your notification message here..." ng-model="data.data.message">
+  				</label>
+  			</div>
+  			<button class="button button-balanced" ng-click="sendNotif();" ng-disabled="data.data.message==''">Send Notification</button>
+  			<p class="note"><b>Note:</b> To show the notification at notification center, please use Postman apps from Chrome. Read our documentation for details.</p>
+  		</div>
+  	</div>
+	</ion-content>
+</ion-view>

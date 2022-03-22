@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "174507835196",
+    "firebase_url": "https://securityapp-147912.firebaseio.com",
+    "project_id": "securityapp-147912",
+    "storage_bucket": "securityapp-147912.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174507835196:android:bc5b7f6eed37d6b3",
+        "android_client_info": {
+          "package_name": "com.ionicpremium.ionium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174507835196-4okqjnps83ppiu00lj0vcsoc7rkd9bc7.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "174507835196-mh0bgsh4qsfs9f7gr4btqj7q0utv3k5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyJRfpIbx6lRxnAepJuvHWnyLkYY8vNP0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

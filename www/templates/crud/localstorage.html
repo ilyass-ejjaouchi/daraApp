@@ -1,0 +1,25 @@
+<ion-view view-title="Using Local Storage">
+	<ion-nav-buttons side="right">
+		<button class="button ink button-icon button-clear ion-plus" ui-sref="app.localcreate"></button>
+	</ion-nav-buttons>
+  <ion-content class="crud">
+  	<div ng-if="!data || data.length==0" class="center">
+  		<div class="hardware">
+  			<i class="icon ion-alert"></i>
+        	<h3>LocalStorage is empty!</h3>
+    	</div>
+    </div>
+ 	<ion-list can-swipe="true"> 
+		<ion-item ng-repeat="x in data" item="item" class="item-remove-animate" ui-sref="app.localedit({id: x.id})">
+			<h2>{{x.title}}</h2>
+			<h3>{{x.notes}}</h3>
+			<ion-option-button class="button-positive" ui-sref="app.localedit({id: x.id})">
+				Edit
+			</ion-option-button>
+			<ion-option-button class="button-assertive" ng-click="CrudDelete($index)">
+                Delete
+    		</ion-option-button>
+		</ion-item>
+	</ion-list>
+  </ion-content>
+</ion-view>

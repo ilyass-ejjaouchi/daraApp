@@ -1,0 +1,30 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.visaapp.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.visaapp.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.visaapp.app"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.visaapp.app"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.visaapp.app"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.visaapp.app"
+    }
+  },
+  "dependent_plugins": {}
+}

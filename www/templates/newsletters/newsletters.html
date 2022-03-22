@@ -1,0 +1,28 @@
+<ion-view view-title="Newsletters">
+  <ion-content class="newscategory">
+
+
+      <div class="col item card" ng-repeat="x in data" ng-click="newsDetail({id : x.id})"  style="width: 44% ; float: left">
+          <div class="opacity"></div>
+          <div class="box">
+              <h5 style="text-transform: capitalize">{{x.title}}</h5>
+          </div>
+      </div>
+
+
+<!--     <div class="row">
+      <div class="col item card" ui-sref="app.newsletter-single()" style="background-image: url(img/news/lifestyle.jpg);">
+        <div class="opacity"></div>
+        <div class="box">
+            <h5>LIFESTYLE</h5>
+        </div>
+      </div>
+      <div class="col item card" ui-sref="app.newsletter-single()" style="background-image: url(img/news/news.jpg);">
+        <div class="opacity"></div>
+        <div class="box">
+              <h5>NEWS & POLITICS</h5>
+          </div>
+      </div>
+    </div> -->
+  </ion-content>
+</ion-view>

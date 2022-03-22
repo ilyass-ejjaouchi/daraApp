@@ -1,0 +1,51 @@
+<ion-view class="feed-view auth-view" cache-view="false">
+  <ion-header-bar class="feed-header fashion-content-header">
+    <div class="buttons" style="left: 10px;">
+      <button style="color: #000; font-weight: 500;" class="button button-clear back-button" ng-click="goBack()">Back</button>
+    </div>
+    <div class="logo-container">
+      <img class="logo-image" ng-src="./img/feed/logo.png" src="./img/feed/logo.png">
+    </div>
+    <div class="buttons">
+      <button class="button button-clear cart-button" ui-sref="main.app.shopping-cart()">
+        <span class="badge cart-badge">{{getProductsInCart()}}</span>
+        <span class="ion-android-cart cart-image"></span>
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content has-bouncing="false" style="background: white">
+    <div class="row form-row">
+      <div class="col">
+        <a class="button button-block facebook-button" ng-click="">Appointment Details</a>
+        <span class="form-divider"></span>
+        <form name="appointment_form" class="form-container" novalidate>
+          <div class="input-list list list-inset">
+            <input type="hidden" ng-model="salon_id" name="salon_id" value="{{product.id}}">
+            <ion-list>
+              <label style="text-align: center;width:100%;float: left;margin-bottom: 10px">Pick a Date & Time</label>
+              <div class='item mydatetime' am-pm only-valid="{'after': 'yesterday', 'inclusive': true}" placeholder="Date Time" ion-datetime-picker ng-model="datetimeValue">
+                {{datetimeValue| date: "dd-MM-yyyy H:mm:ss"}}
+              </div>
+            </ion-list>
+            <!--<label class="item item-input">
+              <input type="date" placeholder="Day" name="date" ng-model="date" required>
+            </label>
+
+            <label class="item item-input">
+              <input type="time" placeholder="Time" ng-model="time" name="time" required>
+            </label>-->
+
+            <textarea class="mytextarea" style="height: 100px" placeholder="Massege" ng-model="message"  name="message" required></textarea>
+
+          </div>
+
+          <p ng-show="error" class="message error">{{error}}</p>
+          <button type="submit" class="button button-block auth-action-button" ng-click="bookAppointment(appointment_form)" ng-disabled="appointment_form.$invalid">
+            Book Now
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

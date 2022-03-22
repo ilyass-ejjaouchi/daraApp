@@ -1,0 +1,32 @@
+<ion-view view-title="Holiday">
+	<ion-content class="">
+		<form ng-submit="requestHoliday(frm)" novalidate="" name="frm" style="padding-top: 60px;">
+			<div class="list padding">
+				<div class="row">
+					<div class="col">
+						<div class="item item-icon-left" ion-datetime-picker date ng-model="startDate">
+							<i class="icon ion-ios-calendar positive"></i>
+							Start Date:
+							<strong>{{startDate| date: "dd-MM-yyyy"}}</strong>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="item item-icon-left" only-valid="{'after': startDate-1}" ion-datetime-picker date ng-model="endDate">
+							<i class="icon ion-ios-calendar positive"></i>
+							End Date:
+							<strong>{{endDate| date: "dd-MM-yyyy"}}</strong>
+						</div>
+					</div>
+				</div>
+				<div class="padding">
+					<button class="button button-full button-positive ink" ng-disabled="frm.$invalid">Submit</button>
+				</div>
+			</div>
+		</form>
+		<!--<div class="dark-positive-bg positive padding center" style="font-size: 18px">if you need more holidays submit the form again!</div>-->
+	</ion-content>
+</ion-view>
+

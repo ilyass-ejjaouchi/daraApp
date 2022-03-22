@@ -1,0 +1,128 @@
+<ion-view class="account-profile-view account-sub-view" cache-view="false">
+  <ion-content>
+    <div class="row user-info-row">
+      <div class="col col-25" ng-if="user.user_detail.image">
+        <pre-img ratio="_1_1">
+          <img class="profile-image" ng-src="{{user.user_detail.image}}" spinner-on-load/>
+        </pre-img>
+      </div>
+      <div class="col col-center user-info-col" ng-class="{{user.user_detail.image != '' ? col-75 : col-100}}">
+        <h3 class="user-welcome">Hello {{user.name}}!</h3>
+        <p class="user-email">{{user.email}}</p>
+      </div>
+    </div>
+    <div class="user-data-row">
+      <div class="row">
+        <label class="col item item-input item-stacked-label">
+          <span class="input-label">Name</span>
+          <input type="text" placeholder="Your name" ng-model="user.name" ng-disabled="false">
+        </label>
+      </div>
+      <div class="row">
+        <label class="col item item-input item-stacked-label">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="Your email" ng-model="user.email" ng-disabled="false">
+        </label>
+      </div>
+      <!--<cl-image public-id="{some_public_id}" class="thumbnail inline" angle="20" format="jpg">
+        <cl-transformation height="150" width="150" crop="fill" gravity="north" effect="sepia" radius="20"/>
+      </cl-image>-->
+      <div class="row">
+        <label class="col item item-input item-stacked-label">
+          <span class="input-label">Phone No</span>
+          <input type="text" placeholder="Your Phone" ng-model="user.user_detail.number" ng-disabled="false">
+        </label>
+      </div>
+      <div class="row">
+        <label class="col item item-input item-stacked-label">
+          <span class="input-label">Address</span>
+          <input type="text" placeholder="Your Address" ng-model="user.user_detail.location" ng-disabled="false">
+        </label>
+      </div>
+
+      <div class="row">
+        <label class="col item item-input item-stacked-label">
+          <span class="input-label">Country</span>
+
+          <select required ng-model="country"  ng-options="country.id as country.countryname for country in countries" >
+            <option value="" disabled>Select One</option>
+          </select>
+
+        </label>
+      </div>
+    </div>
+   <!-- <h3 class="account-sub-title">Default Shipping Address</h3>
+    <div class="address-chooser" ng-click="openAddressesPopover($event)">
+      <button class="button button-block icon-right addresses-popover-button" ng-class="{'ion-chevron-up': addresses_popover.isShown(), 'ion-chevron-down' : !addresses_popover.isShown()}">
+        {{data.selected_address.street || 'Select address'}}
+      </button>
+    </div>
+    <h3 class="account-sub-title">Default Credit Card</h3>
+    <div class="card-chooser" ng-click="openCardsPopover($event)">
+      <button class="button button-block icon-right cards-popover-button" ng-class="{'ion-chevron-up': addresses_popover.isShown(), 'ion-chevron-down' : !addresses_popover.isShown()}">
+        {{data.selected_card.number || 'Select Credit Card'}}
+      </button>
+    </div>
+    <div class="list account-divider">
+      <div class="item item-divider"></div>
+    </div>
+    <h3 class="account-sub-title">Notification Settings</h3>
+    <div class="row notifications-row">
+      <div class="col">
+        <ul class="list notifications-list">
+          <li class="item item-toggle">
+            <span class="notifications-text">Promotions</span>
+            <label class="toggle">
+              <input type="checkbox" ng-model="notifications.promotions">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            <span class="notifications-text">Shipment Updates</span>
+            <label class="toggle">
+              <input type="checkbox" ng-model="notifications.shipment_updates">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="list account-divider">
+      <div class="item item-divider"></div>
+    </div>-->
+    <div class="row invite-and-rate-row">
+      <div class="col">
+        <button class="button button-block invite-friends-button" ng-click="updateProfile(country)">Update Profile</button>
+       <!-- <button class="button button-block button-clear rate-app-button">
+          <i class="icon ion-android-star"></i>
+          <span>Rate this app!</span>
+        </button>-->
+        <button class="button button-block invite-friends-button" style="margin-top: 10px" ui-sref="main.app.newsletter">
+          News Letter
+        </button>
+      </div>
+    </div>
+    <div class="row logout-terms-row">
+      <div class="col">
+        <div class="row terms-row" style="height: auto;">
+          <a class="button button-clear logout-button" style="text-align: center ; width: 100%" ng-click="logout()">Logout</a>
+
+         <!-- <div class="col col-50">
+            <a class="button button-clear button-small legal-stuff-button" ng-click="showPrivacyPolicy()">Privacy Policy</a>
+          </div>
+          <div class="col col-50">
+            <a class="button button-clear button-small legal-stuff-button" ng-click="showTerms()">Terms</a>
+          </div>-->
+         <!-- <div class="col col-25">
+            <a class="button button-clear button-small legal-stuff-button">FAQs</a>
+          </div>-->
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

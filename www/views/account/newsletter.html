@@ -1,0 +1,19 @@
+<ion-view class="account-view" view-title="NewsLetter" cache-view="false">
+  <ion-header-bar class="account-header">
+    <div class="buttons">
+      <button class="button button-clear back-button" style="color: white" ng-click="goBack()">Back</button>
+    </div>
+    <h1 class="title">NewsLetter</h1>
+  </ion-header-bar>
+
+  <ion-content style="background: white">
+    <ion-list>
+      <!--<ion-item ng-repeat="x in data" ng-click="newsDetail(x.id)">-->
+      <ion-item ng-repeat="x in data" ng-click="viewDocument(x.discription)" >
+        <h2>{{x.title}}</h2>
+        <!--<a href="{{$rootScope.serverDomain+x.discription}}">{{x.discription}}</a>-->
+      </ion-item>
+    </ion-list>
+    <p class="padding assertive" ng-if="error" style="text-align: center">{{error}}</p>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,61 @@
+<ion-view class="feed-real-state-view account-orders-view account-sub-view" cache-view="false">
+
+  <ion-content>
+    <style>
+      .addToFav{
+        position: absolute;
+        right: 15px;
+        top: 9px;
+        font-size: 26px;
+        color: #F00A77;
+        z-index: 100;
+      }
+    </style>
+    <!-- <div ng-if="results.length == 0">
+      <h2>No results</h2>
+    </div> -->
+    <div style="background: white" ng-if="products.length > 0">
+      <div class="search-results-container">
+        <div class="products-row">
+          <div class="real-state-product-container" id="item{{product.salon_detail.user_id}}" ng-repeat="product in products">
+            <div class="row image-row">
+              <div class="col product-image-container item item-image product-image-wrapper">
+                <span class='addToFav' ng-click="removeFromFav($event,product.salon_detail.user_id)" title='Remove From Favourite'><i class="icon ion-ios-close-outline" aria-hidden="true"></i></span>
+                <a class="product-anchor" ui-sref="main.app.salon.content({productId: product.id})">
+                  <pre-img ratio="_20_9">
+                    <img ng-if="product.salon_detail.image" style="height: 200px" ng-src="{{serverDomain+'img/backend/uploads/salons/'+product.salon_detail.image}}" spinner-on-load>
+                    <img ng-if="!product.salon_detail.image" style="height: 200px" ng-src="{{serverDomain+'img/service/ser4.jpg'}}" spinner-on-load>
+                  </pre-img>
+                </a>
+              </div>
+            </div>
+            <div class="row description-row">
+              <div class="col">
+                <p class="product-address">
+                  {{product.name}}
+                </p>
+                <!--<h2 class="product-price">
+                  <a class="product-anchor">$ {{product.price}}</a>
+                  &lt;!&ndash; <a class="product-anchor" ui-sref="main.app.feed.real-state.content({productId: product.id})">$ {{product.price}}</a> &ndash;&gt;
+                </h2>-->
+                <p class="product-address">
+                  {{product.address}}
+                </p>
+              </div>
+              <!--<div class="col col-33 amenities-col">
+                <i class="theme-icon icon-bed"></i>
+                <span>{{product.bedrooms}}</span>
+                <i class="theme-icon icon-toilet"></i>
+                <span>{{product.bathrooms}}</span>
+              </div>-->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="text-center padding" ng-if="products.length < 1">
+      No Favourite Salon Found
+    </div>
+  </ion-content>
+</ion-view>

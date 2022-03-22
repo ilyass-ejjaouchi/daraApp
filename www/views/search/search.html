@@ -1,0 +1,80 @@
+<ion-view class="search-view feed-view feed-real-state-view feed-sub-view" cache-view="false">
+  <style>
+    .addToFav{
+      position: absolute;
+      right: 15px;
+      top: 9px;
+      font-size: 22px;
+      color: #F00A77;
+      z-index: 100;
+    }
+  </style>
+  <ion-header-bar class="search-header">
+    <div class="row item-input-inset search-row">
+      <div class="col col-75">
+        <label class="item-input-wrapper search-label">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="Search City" name="search_query" ng-model="search.query">
+        </label>
+      </div>
+      <div class="col">
+        <button class="button button-clear cancel-button" ng-click="cancelSearch()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <!-- <div ng-if="results.length == 0">
+      <h2>No results</h2>
+    </div> -->
+    <div>
+
+      <section ng-include="'views/common/sort-and-filters-bar.html'"></section>
+      <div class="search-results-container">
+        <div class="products-row">
+          <div class="real-state-product-container" ng-repeat="product in results = (products | searchField : 'product.name' | filter:search.query)">
+            <div class="row image-row">
+              <div class="col product-image-container item item-image product-image-wrapper">
+<!--
+                <span ng-if="favIds | contains:product.salon_detail.user_id" class='addToFav' ng-click="removeFromFav($event,product.salon_detail.user_id)" title='Remove From Favourite'><i class="icon ion-ios-heart" aria-hidden="true"></i></span>
+-->
+                    <span ng-if="user_type == 3">
+                <span ng-if="favIds | contains:product.salon_detail.user_id" class='addToFav' title='Remove From Favourite'><i class="icon ion-ios-heart" aria-hidden="true"></i></span>
+                <span ng-if="!(favIds | contains:product.salon_detail.user_id)" class='addToFav' ng-click="addToFav($event,product.salon_detail.user_id)" title='Add To Favourite'><i class="icon ion-ios-heart-outline" aria-hidden="true"></i></span>
+                    </span>
+                <a class="product-anchor" ui-sref="main.app.salon.content({productId: product.id})">
+                  <pre-img ratio="_20_9">
+                    <img ng-if="product.salon_detail.image" style="height: 200px" ng-src="{{serverDomain+'img/backend/uploads/salons/'+product.salon_detail.image}}" spinner-on-load>
+                    <img ng-if="!product.salon_detail.image" style="height: 200px" ng-src="{{serverDomain+'img/service/ser4.jpg'}}" spinner-on-load>
+                  </pre-img>
+                </a>
+              </div>
+            </div>
+            <div class="row description-row">
+              <div class="col">
+                <p class="product-address">
+                  {{product.name}}
+                </p>
+                <!--<h2 class="product-price">
+                  <a class="product-anchor">$ {{product.price}}</a>
+                  &lt;!&ndash; <a class="product-anchor" ui-sref="main.app.feed.real-state.content({productId: product.id})">$ {{product.price}}</a> &ndash;&gt;
+                </h2>-->
+                <p class="product-address">
+                  {{product.address}}
+                </p>
+              </div>
+              <!--<div class="col col-33 amenities-col">
+                <i class="theme-icon icon-bed"></i>
+                <span>{{product.bedrooms}}</span>
+                <i class="theme-icon icon-toilet"></i>
+                <span>{{product.bathrooms}}</span>
+              </div>-->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

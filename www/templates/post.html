@@ -1,0 +1,18 @@
+<ion-view ng-init="showPost()">
+    <ion-nav-buttons side="right"></ion-nav-buttons>
+
+  <ion-content class="padding">
+
+          <h1 class="title text-center">{{post.title.rendered}}</h1>
+
+      <span class="padding {{class}}"  ng-bind-html="postContent"></span>
+
+      <div class="row" class="animate-fade-slide-in">
+
+          <div class="col ink" style="text-align: center">
+              <img src="img/daracar.png" style="height: 80px;" />
+          </div>
+      </div>
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="Back to Top">
+  <ion-content overflow-scroll="true" scroll-to-top="150" delegate-handle="scroller">
+  	<ion-list>
+      <ion-item ng-repeat="x in data" class="item-thumbnail-left">
+        <img ng-src="{{x.picture.medium}}">
+        <h2>{{x.name.title}} {{x.name.first}} {{x.name.last}}</h2>
+        <p>{{x.email}}</p>
+        <p>{{x.location.city}}</p>
+        <p>{{x.phone}}</p>            
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadmore()" distance="10%"></ion-infinite-scroll>
+  </ion-content>
+  <scroll-to-top-button animate="true"> 
+	    <div class="float-button">
+	        <span class="height-fix">
+	            <a class="content">
+	                <i class="ion-ios-arrow-up"> </i>
+	            </a>
+	        </span>
+	    </div>
+	</scroll-to-top-button>
+</ion-view>

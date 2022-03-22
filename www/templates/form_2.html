@@ -1,0 +1,124 @@
+<ion-view>
+    <ion-nav-buttons side="right"></ion-nav-buttons>
+
+    <ion-content class="padding">
+
+        <h1 class="title text-center">{{ 'INSURANCE' | translate }}</h1>
+
+        <form name="form_2" method="post" class="wpcf7-form formins2" novalidate="">
+            <div style="display: none;">
+                <input type="hidden" name="_wpcf7" value="166">
+                <input type="hidden" name="_wpcf7_version" value="4.7">
+                <input type="hidden" name="_wpcf7_locale" value="en_US">
+                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f166-o1">
+                <input type="hidden" name="_wpnonce" value="2d38a5a899">
+            </div>
+            <p>{{ 'REGISTRATION_NUMBER' | translate }}<br>
+                <span class="wpcf7-form-control-wrap Theirregistrationnumber"><input required ng-model="registration_number" type="text" name="registration_number" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="in1-reg-num" aria-required="true" aria-invalid="false"></span> </p>
+            <p>{{ 'THEIR_NAME' | translate }}<br>
+                <span class="wpcf7-form-control-wrap text-150"><input required ng-model="name" type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text" id="in1-their-name" aria-invalid="false"></span></p>
+            <p>{{ 'THEIR_PHONE' | translate }}<br>
+                <span class="wpcf7-form-control-wrap phone"><input type="tel" required ng-model="phone" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" id="in1-their-num" aria-required="true" aria-invalid="false"></span> </p>
+            <p>{{ 'THEIR_ADDRESS' | translate }}<br>
+                <span class="wpcf7-form-control-wrap text-804"><input type="text" ng-model="address" required name="address" value="" size="40" class="wpcf7-form-control wpcf7-text" id="in1-their-add" aria-invalid="false"></span></p>
+            <p>{{ 'THEIR_INSURER' | translate }}<br>
+                <span class="wpcf7-form-control-wrap text-193"><input ng-model="insurer" required type="text" name="insurer" value="" size="40" class="wpcf7-form-control wpcf7-text" id="in1-their-ins" aria-invalid="false"></span></p>
+            <p>{{ 'DATE' | translate }}<br>
+                <span class="wpcf7-form-control-wrap date-830"><input ng-model="date" required type="date" name="date" value="" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" id="in1-date" aria-invalid="false"></span></p>
+            <p>{{ 'TIME' | translate }}<br>
+                <span class="wpcf7-form-control-wrap text-465"><input ng-model="time" required type="time" name="time" value="" size="40" class="wpcf7-form-control wpcf7-text" id="in1-time" aria-invalid="false"></span></p>
+            <p>{{ 'THEIR_VEHICLE_MAKE' | translate }}<br>
+                <span class="wpcf7-form-control-wrap make"><input ng-model="make1" required type="text" name="make1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="in1-make" aria-required="true" aria-invalid="false"></span> </p>
+            <p>{{ 'MODEL' | translate }}<br>
+                <span class="wpcf7-form-control-wrap model"><input ng-model="model" required type="text" name="model" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="in1-model" aria-required="true" aria-invalid="false"></span> </p>
+            <p>{{ 'COLOR' | translate }}<br>
+                <span class="wpcf7-form-control-wrap Colour"><input ng-model="color" required type="text" name="color" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="in1-colour" aria-required="true" aria-invalid="false"></span> </p>
+            <p>{{ 'PASSENGERS' | translate }}<br>
+                <span class="wpcf7-form-control-wrap Passengers"><input ng-model="passenger" required type="number" name="passenger" value="" class="wpcf7-form-control wpcf7-number wpcf7-validates-as-required wpcf7-validates-as-number" id="in1-passengers" aria-required="true" aria-invalid="false"></span> </p>
+
+            <!--<p>Damage to your vehicle<br>-->
+                <!--<span class="wpcf7-form-control-wrap text-78">-->
+                    <!--<input type="text" required ng-model="damage" name="text-78" value="" size="40"-->
+                                                                     <!--class="wpcf7-form-control wpcf7-text"-->
+                                                                     <!--id="in2-dam-your" aria-invalid="false"></span></p>-->
+            <p>{{ 'DAMAGE_TO_OTHER' | translate }}<br>
+                <span class="wpcf7-form-control-wrap text-309">
+                    <input type="text" required ng-model="damage2" name="damage2" value="" size="40"
+                                                                      class="wpcf7-form-control wpcf7-text"
+                                                                      id="in2-dam-their" aria-invalid="false"></span>
+            </p>
+            <p>{{ 'SEE_OTHER_VEHICLE' | translate }}<br>
+                <span class="wpcf7-form-control-wrap clarity">
+                    <input type="text" required ng-model="clarity" name="clarity" value="" size="40"
+                                                                     class="wpcf7-form-control wpcf7-text"
+                                                                     id="in2-clarity" aria-invalid="false"></span></p>
+            <!--<p>If not, why?<br>-->
+                <!--<span class="wpcf7-form-control-wrap why">-->
+                    <!--<input type="text" required name="why" ng-model="why" value="" size="40"-->
+                                                                 <!--class="wpcf7-form-control wpcf7-text"-->
+                                                                 <!--id="in2-clarity-why" aria-invalid="false"></span></p>-->
+            <p>{{ 'OTHER_OBJECT_CALL' | translate }}<br>
+                <span class="wpcf7-form-control-wrap driver">
+                    <input type="text" required name="driver" ng-model="driver" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text"
+                                                                    id="in2-pol-object" aria-invalid="false"></span></p>
+            <p>{{ 'WHAT_THEY_SAY' | translate }}<br>
+                <span class="wpcf7-form-control-wrap say">
+                    <input type="text" required name="say" ng-model="say" value="" size="40"
+                                                                 class="wpcf7-form-control wpcf7-text" id="in2-say"
+                                                                 aria-invalid="false"></span></p>
+            <p>{{ 'WEATHER_LIKE' | translate }}<br>
+                <span class="wpcf7-form-control-wrap text-967">
+                    <input type="text" required name="weather" ng-model="weather" value="" size="40"
+                                                                      class="wpcf7-form-control wpcf7-text"
+                                                                      id="in2-weather" aria-invalid="false"></span></p>
+            <p></p>
+            <p>{{ 'ANYTHING_ELSE' | translate }}<br>
+                <span class="wpcf7-form-control-wrap factors">
+                    <input type="text" required name="factors" ng-model="factors" value="" size="40"
+                                                                     class="wpcf7-form-control wpcf7-text"
+                                                                     id="in2-factores" aria-invalid="false"></span></p>
+            <p>{{ 'ID_OF_POLICE' | translate }}<br>
+                <span class="wpcf7-form-control-wrap police">
+                    <input type="text" required name="police" ng-model="police" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text"
+                                                                    id="in2-pol-num" aria-invalid="false"></span></p>
+            <p>{{ 'ACCIDENT_REF' | translate }}<br>
+                <span class="wpcf7-form-control-wrap reference">
+                    <input type="text" required name="reference" ng-model="reference" value="" size="40"
+                                                                       class="wpcf7-form-control wpcf7-text"
+                                                                       id="in2-acc-ref" aria-invalid="false"></span></p>
+            <p>{{ 'WITNESS' | translate }}<br>
+                <span class="wpcf7-form-control-wrap text-494">
+                    <input type="text" required name="contacts" ng-model="contacts" value="" size="40"
+                                                                      class="wpcf7-form-control wpcf7-text"
+                                                                      id="in2-witness" aria-invalid="false"></span></p>
+            <p>{{ 'YOUR_EMAIL' | translate }}<br>
+                <span class="wpcf7-form-control-wrap email-933">
+                    <input type="email" required name="email" ng-model="email" value="" size="40"
+                                                                       class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email"
+                                                                       id="in2-email-your" aria-invalid="false"></span>
+            </p>
+            <!--<p>Model<br>-->
+                <!--<span class="wpcf7-form-control-wrap model"><input ng-model="model" required type="text" name="model" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="in1-model" aria-required="true" aria-invalid="false"></span> </p>-->
+            <!--<p>Colour<br>-->
+                <!--<span class="wpcf7-form-control-wrap Colour"><input ng-model="color" required type="text" name="Colour" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="in1-colour" aria-required="true" aria-invalid="false"></span> </p>-->
+            <!--<p> Number of passengers<br>-->
+                <!--<span class="wpcf7-form-control-wrap Passengers"><input ng-model="passenger" required type="number" name="passenger" value="" class="wpcf7-form-control wpcf7-number wpcf7-validates-as-required wpcf7-validates-as-number" id="in1-passengers" aria-required="true" aria-invalid="false"></span> </p>-->
+
+            <p><button type="submit" ng-disabled="form_2.$invalid" ng-click="submit_form2(form_2)" class="button button-full button-positive ink">{{ 'SUBMIT' | translate }}</button></p>
+
+            <p class="note padding text-center assertive bold">{{ 'REPEAT' | translate }}</p>
+
+            <div class="wpcf7-response-output wpcf7-display-none"></div>
+        </form>
+
+        <div class="row" class="animate-fade-slide-in">
+
+            <div class="col ink" style="text-align: center">
+                <img src="img/daracar.png" style="height: 80px;" />
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

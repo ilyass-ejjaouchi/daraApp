@@ -1,0 +1,16 @@
+<ion-view view-title="Guard's Weekly Rota">
+  <ion-content class="">
+    <ion-list class="list-with-border">
+      <ion-item ng-repeat="x in data" ui-sref="app.rotalocation({lat : x.guardSiteDetail.latitude,log:x.guardSiteDetail.logitude})"> <!--class="item-thumbnail-left"-->
+        <!--<img ng-src="{{x.picture.medium}}">-->
+        <h2>{{dateParse(x.guardSite.date) | date:'EEEE dd/M/yyyy'}}</h2>
+        <p>Start time: {{dateParse(x.guardShift.start_time) | date:'dd-M-yyyy H:mm:s'}}</p>
+        <p>Finish time: {{dateParse(x.guardShift.end_time) | date:'dd-M-yyyy H:mm:s'}}</p>
+        <p>Address: {{x.guardSiteDetail.location}}</p>
+        <!--<p>Distance from current location:{{ x.distance | number : 3}} Miles</p>-->
+        <!--<p>{{x.phone}}</p>-->
+      </ion-item>
+    </ion-list>
+    <div ng-if="error" class="padding assertive center">{{error}}</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,120 @@
+<ion-view view-title="Pinch & Zoom Images">
+	<ion-nav-buttons side="right">
+        <div class="icon-cart ink">
+            <div class="total-cart">
+                <span>3</span>
+            </div>  
+            <button class="button ink button-icon button-clear ion-ios-heart-outline"></button>
+        </div>
+        <div class="icon-cart ink">
+            <div class="total-cart">
+                <span>12</span>
+            </div>
+            <button class="button ink button-icon button-clear ion-ios-cart-outline"></button>
+        </div>       
+    </ion-nav-buttons>
+  <ion-content class="ecommerce">
+    <div class="badges">
+        <span class="sold">Sold out</span>
+        <span class="sale">21% OFF</span>
+    </div>
+  	<ion-slide-box does-continue="true" class="slider" show-pager="true">        
+        <ion-slide ng-repeat="x in productSlides" ng-click="showImages($index);">
+            <div class="product-img">
+                <div class="img" style="background-image: url({{x.img}})"></div>
+                <button class="button ink button-icon button-clear ion-arrow-expand"></button>
+            </div>
+        </ion-slide>       
+    </ion-slide-box>
+	<div class="padding product">
+        <h4 class="title">Camera Old</h4>
+        <del>$500</del>
+        <div class="price">
+        	$250
+        	<span class="pull-right">
+        		<i class="icon ion-android-share"></i> Share
+        	</span>
+        </div>
+    </div>        
+   
+    <div class="item item-divider">
+		PRODUCT OPTIONS
+	</div>
+	<ion-list>
+        <ion-radio ng-value="0">
+            <span>Yellow</span>
+        </ion-radio>
+        <ion-radio ng-value="1">
+            <span>Black</span>
+        </ion-radio>
+        <ion-radio ng-value="2">
+            <span>Orange</span>
+        </ion-radio>
+        <ion-radio ng-value="3">
+            <span>Purple</span>
+        </ion-radio>
+    </ion-list> 
+
+    <div class="item item-divider">
+		DESCRIPTION
+	</div>
+	<div class="padding">
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+	</div>
+	<div class="item item-divider">
+		RELATED PRODUCTS
+	</div>
+	<div class="row">
+      <div class="col col-50 ink">
+        <div class="product">
+            <div class="badges">
+                <span class="sale">10% OFF</span>
+            </div>
+            <div class="img" style="background-image: url(img/ecommerce/coffee.jpg)"></div>
+            <div class="box">
+                <h5>Coffee</h5>                
+                <span class="price">$13.5</span>
+                <del>$15</del>
+            </div>
+        </div>
+      </div>
+      <div class="col col-50 ink">
+        <div class="product">
+            <div class="img" style="background-image: url(img/ecommerce/ice-cream.jpg)"></div>
+            <div class="box">
+                <h5>Ice Cream</h5>
+                <span class="price">$5</span>
+            </div>
+        </div>
+      </div>      
+    </div>
+    <div class="row">
+      <div class="col col-50 ink">
+        <div class="product">
+            <div class="badges">
+                <span class="sale">10% OFF</span>
+            </div>
+            <div class="img" style="background-image: url(img/ecommerce/coffee.jpg)"></div>
+            <div class="box">
+                <h5>Coffee</h5>                
+                <span class="price">$13.5</span>
+                <del>$15</del>
+            </div>
+        </div>
+      </div>
+      <div class="col col-50 ink">
+        <div class="product">
+            <div class="img" style="background-image: url(img/ecommerce/ice-cream.jpg)"></div>
+            <div class="box">
+                <h5>Ice Cream</h5>
+                <span class="price">$5</span>
+            </div>
+        </div>
+      </div>      
+    </div> 
+  </ion-content>
+  <ion-footer-bar>
+		<button class="button button-positive">Buy Now</button>
+	</ion-footer-bar>
+</ion-view>

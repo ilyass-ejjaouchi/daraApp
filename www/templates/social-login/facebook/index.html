@@ -1,0 +1,29 @@
+<ion-view view-title="Facebook Connect" class="login-bg">
+  <ion-content class="login">
+    <div class="overlay"></div>
+    <div class="content">
+        <img src="img/logo.png" />
+        <h2>visa</h2>
+        <h4>Ionic Premium Multipurpose App</h4>
+        <h5>100% customizable for any Android & iOS apps.</h5>    
+    
+        <div ng-if="!isFBlogin">
+            <div class="divider">
+                <div class="line left"></div>
+                <div class="line right"></div>
+                <div class="text">Facebook Connect API</div>
+            </div>
+            <button class="button icon-left ion-social-facebook button-positive" ng-click="FBlogin()">Connect with Facebook</button>
+        </div>
+        <div ng-if="isFBlogin">
+            <div class="divider">
+                <div class="line left"></div>
+                <div class="line right"></div>
+                <div class="text">Connect data with Facebook</div>
+            </div>
+            <button class="button icon-left ion-social-facebook button-positive" ui-sref="app.fbprofile">Go to Facebook App</button>
+        </div>
+        <p class="note">Only works on your real device, not in browser</p>
+    </div>      
+  </ion-content>
+</ion-view>

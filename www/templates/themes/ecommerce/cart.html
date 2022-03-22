@@ -1,0 +1,75 @@
+<ion-view view-title="Cart" class="cart">
+    <ion-nav-buttons side="right">        
+        <div class="icon-cart ink" ui-sref="app.ecommerce-wish">
+            <div class="total-cart">
+                <span>3</span>
+            </div>
+            <button class="button ink button-icon button-clear ion-ios-heart-outline"></button>
+        </div>
+        <button class="button button-icon button-clear ion-trash-a" ng-click="data.showDelete = !data.showDelete; "></button>
+    </ion-nav-buttons>
+	<ion-content class="cart">
+        <ion-list show-delete="data.showDelete" can-swipe="true">	
+    		<ion-item class="item item-thumbnail-left">
+                <div class="img-cart" ui-sref="app.ecommerce-product">
+                    <div class="img" style="background-image: url(img/ecommerce/camera-old.jpg)"></div>
+                </div>              
+                <div class="item-desc">
+                    <h3>Camera Old</h3>
+                    <div class="price-wrapper">
+                        <div class="pull-right">
+                            <div class="qty-wrapper">
+                                <span class="btnQty">
+                                    <button class="button button-icon icon ion-ios-minus"></button>
+                                </span>
+                                <span>2 item</span>
+                                <span class="btnQty">
+                                    <button class="button button-icon icon ion-ios-plus"></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <p>@ $250</p>
+                            <p><b>$500</b></p>
+                        </div>
+                    </div>
+                </div>
+                <ion-delete-button class="ion-trash-a"></ion-delete-button>               
+            </ion-item>
+            <ion-item class="item item-thumbnail-left">
+                <div class="img-cart" ui-sref="app.ecommerce-product">
+                    <div class="img" style="background-image: url(img/ecommerce/camera-new.jpg)"></div>
+                </div>              
+                <div class="item-desc">
+                    <h3>Camera New</h3>
+                    <div class="price-wrapper">
+                        <div class="pull-right">
+                            <div class="qty-wrapper">
+                                <span class="btnQty">
+                                    <button class="button button-icon icon ion-ios-minus"></button>
+                                </span>
+                                <span>2 item</span>
+                                <span class="btnQty">
+                                    <button class="button button-icon icon ion-ios-plus"></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <p>@ $200</p>
+                            <p><b>$400</b></p>
+                        </div>
+                    </div>
+                </div>
+                <ion-delete-button class="ion-trash-a"></ion-delete-button>               
+            </ion-item>
+        </ion-list>	
+		<div class="cart-total">                        
+			<h4>Total : <b>$900</b></h4>
+            <p class="note">Exclude shipping cost</shipping>
+        </div>
+
+	</ion-content>
+	<ion-footer-bar>
+		<button class="button button-energized">Checkout</button>
+	</ion-footer-bar>
+</ion-view>

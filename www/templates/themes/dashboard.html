@@ -1,0 +1,28 @@
+<ion-view view-title="Dashboard" class="dash">
+  <ion-content>    
+      <ion-slide-box auto-play="1000" does-continue="true" class="slider">
+          <ion-slide>
+              <div class="img" style="background-image: url(img/dashboard/slide1.jpg)"></div>
+          </ion-slide>
+          <ion-slide>
+              <div class="img" style="background-image: url(img/dashboard/slide2.jpg)"></div>
+          </ion-slide>
+      </ion-slide-box>
+  	<ion-list>
+      <div class="row" ng-repeat="x in mainmenu" ng-if="$index%3==0" class="animate-fade-slide-in">
+        <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index].id})" ng-if="$index < mainmenu.length">
+          <span class="iconmenu icon {{mainmenu[$index].icon}}"></span>
+          <p>{{mainmenu[$index].title}}</p>
+        </div>
+        <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index+1].id})" ng-if="$index+1 < mainmenu.length">
+          <span class="iconmenu icon {{mainmenu[$index+1].icon}}"></span>
+          <p>{{mainmenu[$index+1].title}}</p>
+        </div>
+        <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index+2].id})" ng-if="$index+2 < mainmenu.length">
+          <span class="iconmenu icon {{mainmenu[$index+2].icon}}"></span>
+          <p>{{mainmenu[$index+2].title}}</p>
+        </div>
+      </div>
+  	</ion-list>
+  </ion-content>
+</ion-view>

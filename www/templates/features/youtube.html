@@ -1,0 +1,13 @@
+<ion-view view-title="Youtube API">
+  <ion-content class="">
+  	<div class="list card" ng-repeat="x in data">  		
+  		<div class="item item-image">
+  			<youtube id="'http://youtube.com/embed/'+x.id.videoId"></youtube>
+  		</div>
+      <div class="item item-text-wrap">
+        <h2>{{x.snippet.title}}</h2>
+        <p><i class="ion ion-ios-calendar-outline"></i> {{x.snippet.publishedAt | limitTo: 10}}</p>
+      </div>
+  	</div> 
+  </ion-content>
+</ion-view>

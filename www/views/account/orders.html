@@ -1,0 +1,153 @@
+<ion-view class="account-orders-view account-sub-view" cache-view="false" view-title="My Orders">
+    <ion-content>
+        <div class="orders-row" style="background: white">
+            <div class="card order-item" ng-repeat="order in orders">
+                <div class="item item-divider order-header">
+                    <span class="header-title">{{order.created_at | amDateFormat:'DD MMM, YYYY'}}</span>
+                    <span style="float: right" ng-click="cancelOrder(order.id)" ng-if="order.processing == 1">cancel</span>
+                </div>
+
+
+                <span ng-if="supplier == 1">
+                    <span ng-if="order.processing == 1"  ng-click="approveOrder(order.id)">
+                        <div class="item item-text-wrap order-content">
+                        <div class="row order-product">
+                            <div class="col col-20 product-image-col">
+                                <pre-img ratio="_0_0">
+                                    <img ng-if="order.product_detail.productpicture" class="product-image cart-img"
+                                         ng-src="{{serverDomain+order.product_detail.productpicture}}" spinner-on-load>
+                                    <img ng-if="!order.product_detail.productpicture" class="product-image cart-img"
+                                         ng-src="{{serverDomain+'img/service/ser4.jpg'}}" spinner-on-load>
+
+                                </pre-img>
+
+                            </div>
+
+                            <div class="col col-center">
+                                <span class="product-name"> Buyer : {{order.order_booker.name}}</span>
+                                <span class="product-name"> Product :{{order.product_detail.productname}}</span>
+                                <span class="product-name"> Quantity :  {{order.order_detail.qty ? order.order_detail.qty : '1'}}</span>
+                                <span class="product-name"> Location: {{(order.booker_detail.location) ? order.booker_detail.location : 'N/A'}}</span>
+                                <span class="product-name"> Price: {{(order.order_detail.currency) ? order.order_detail.currency : '$' }}{{order.total_price ? order.total_price : 'N/A'}}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div ng-switch="order.processing">
+
+                        <div ng-switch-when="0">
+                            <div class="item item-divider order-footer canceled">
+                                <span class="status-title">Canceled</span>
+                            </div>
+                        </div>
+
+                        <div ng-switch-when="1">
+                            <div class="item item-divider order-footer shipped">
+                                <span class="status-title">Pending</span>
+                            </div>
+                        </div>
+
+                        <div ng-switch-when="2">
+                            <div class="item item-divider order-footer delivered">
+                                <span class="status-title">Processed</span>
+                            </div>
+                        </div>
+                    </div>
+                    </span>
+                    <span ng-if="order.processing != 1" >
+                        <div class="item item-text-wrap order-content">
+                        <div class="row order-product">
+                            <div class="col col-20 product-image-col">
+                                <pre-img ratio="_0_0">
+                                    <img ng-if="order.product_detail.productpicture" class="product-image cart-img"
+                                         ng-src="{{serverDomain+order.product_detail.productpicture}}" spinner-on-load>
+                                    <img ng-if="!order.product_detail.productpicture" class="product-image cart-img"
+                                         ng-src="{{serverDomain+'img/service/ser4.jpg'}}" spinner-on-load>
+
+                                </pre-img>
+
+                            </div>
+
+                            <div class="col col-center">
+                                <span class="product-name"> Buyer : {{order.order_booker.name}}</span>
+                                <span class="product-name"> Product :{{order.product_detail.productname}}</span>
+                                <span class="product-name"> Quantity :  {{order.order_detail.qty ? order.order_detail.qty : '1'}}</span>
+                                <span class="product-name"> Location: {{(order.booker_detail.location) ? order.booker_detail.location : 'N/A'}}</span>
+                                <span class="product-name"> Price: {{(order.order_detail.currency) ? order.order_detail.currency : '$' }}{{order.total_price ? order.total_price : 'N/A'}}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div ng-switch="order.processing">
+
+                        <div ng-switch-when="0">
+                            <div class="item item-divider order-footer canceled">
+                                <span class="status-title">Canceled</span>
+                            </div>
+                        </div>
+
+                        <div ng-switch-when="1">
+                            <div class="item item-divider order-footer shipped">
+                                <span class="status-title">Pending</span>
+                            </div>
+                        </div>
+
+                        <div ng-switch-when="2">
+                            <div class="item item-divider order-footer delivered">
+                                <span class="status-title">Processed</span>
+                            </div>
+                        </div>
+                    </div>
+                    </span>
+
+                </span>
+                <span ng-if="supplier != 1">
+
+        <div class="item item-text-wrap order-content">
+          <div class="row order-product" ng-repeat="product in order.product_detail track by $index">
+            <div class="col col-20 product-image-col">
+              <pre-img ratio="_0_0">
+                <img ng-if="product.productpicture" class="product-image cart-img"
+                     ng-src="{{serverDomain+product.productpicture}}" spinner-on-load>
+                <img ng-if="!product.productpicture" class="product-image cart-img"
+                     ng-src="{{serverDomain+'img/service/ser4.jpg'}}" spinner-on-load>
+
+              </pre-img>
+
+            </div>
+            <div class="col col-center name-col">
+              <span class="product-name">{{product.productname}}  {{product.qty}}</span>
+            </div>
+            <div class="col col-center">
+              <span class="product-price">${{order.order_detail[$index].price}}</span>
+            </div>
+          </div>
+        </div>
+        <div ng-switch="order.processing">
+
+          <div ng-switch-when="0">
+            <div class="item item-divider order-footer canceled">
+              <span class="status-title">Canceled</span>
+            </div>
+          </div>
+
+          <div ng-switch-when="1">
+            <div class="item item-divider order-footer shipped">
+              <span class="status-title">Pending</span>
+            </div>
+          </div>
+
+          <div ng-switch-when="2">
+            <div class="item item-divider order-footer delivered">
+              <span class="status-title">Processed</span>
+            </div>
+          </div>
+        </div>
+        </span>
+            </div>
+            <div style="text-align: center;color:red" ng-if="!orders.length">
+                No Order till now!.
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

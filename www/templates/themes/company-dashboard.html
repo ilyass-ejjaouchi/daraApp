@@ -1,0 +1,165 @@
+<ion-view view-title="Company Dashboard" class="dash">
+  <ion-content>
+  	<ion-list>
+      <div class="row animate-fade-slide-in">
+
+        <div class="col ink" ui-sref="app.newsletters()" >
+          <span class="iconmenu icon ion-android-mail green myborder"></span>
+          <p>Newsletter</p>
+        </div>
+        <div class="col ink" ui-sref="app.messages()" >
+          <span class="iconmenu icon ion-android-chat myborder lightgreen"></span>
+          <p>Messages</p>
+        </div>
+      </div>
+      <!--<div class="row animate-fade-slide-in">
+
+        <div class="col ink" ui-sref="app.shifts" >
+          <span class="iconmenu icon ion-ios-camera orange myborder"></span>
+          <p>Attendance</p>
+        </div>
+
+        <div class="col ink" ui-sref="app.weeklyrota()" >
+          <span class="iconmenu icon ion-pinpoint violet myborder"></span>
+          <p>Weekly Rota</p>
+        </div>
+
+        <div class="col ink" ui-sref="app.newsletters()" >
+          <span class="iconmenu icon ion-android-mail green myborder"></span>
+          <p>Newsletter</p>
+        </div>
+
+      </div>-->
+
+      <!--<div class="row" class="animate-fade-slide-in">
+
+        <div class="col ink" ui-sref="app.messages()" >
+          <span class="iconmenu icon ion-android-chat myborder lightgreen"></span>
+          <p>Messages</p>
+        </div>
+
+        <div class="col ink" ui-sref="app.site-instructions()" >
+          <span class="iconmenu icon ion-clipboard blue myborder"></span>
+          <p>Assignment Instructions</p>
+        </div>
+
+        <div class="col ink" ui-sref="app.site-risk-assignment()" >
+          <span class="iconmenu icon ion-alert lightblue myborder"></span>
+          <p>Risk Assessments</p>
+        </div>
+
+      </div>-->
+      <div class="row animate-fade-slide-in">
+
+
+        <div class="col ink" ui-sref="app.site-daily-occurrence()">
+          <span class="iconmenu icon ion-ios-book red myborder"></span>
+          <p>Daily Occurrence Book</p>
+        </div>
+        <div class="col ink" ui-sref="app.training()" >
+          <span class="iconmenu icon ion-wand lightblue myborder"></span>
+          <p>Training</p>
+        </div>
+      </div>
+      <!--<div class="row" class="animate-fade-slide-in">
+        <div class="col ink" ui-sref="app.patrol-timing()" >
+          <span class="iconmenu icon ion-android-walk yellow myborder"></span>
+          <p>Patrol</p>
+        </div>
+
+        <div class="col ink" ui-sref="app.site-checks()" >
+          <span class="iconmenu icon ion-android-checkmark-circle purpel myborder"></span>
+          <p>Opening and Closing Check</p>
+        </div>
+
+        <div class="col ink" ui-sref="app.site-daily-occurrence()">
+          <span class="iconmenu icon ion-ios-book red myborder"></span>
+          <p>Daily Occurrence Book</p>
+        </div>
+
+      </div>
+
+      <div class="row animate-fade-slide-in">
+                <div class="col ink" ui-sref="app.site-picture-of-customer-id()">
+                  <span class="iconmenu icon ion-image orange myborder"></span>
+                  <p>Picture of Customer ID</p>
+                </div>
+
+                <div class="col ink" ui-sref="app.incidents()" >
+                  <span class="iconmenu icon ion-alert-circled violet myborder"></span>
+                  <p>Incident Report</p>
+                </div>
+
+                <div class="col ink" ui-sref="app.accidents()" >
+                  <span class="iconmenu icon ion-android-alert green myborder"></span>
+                  <p>Accident Report</p>
+                </div>
+
+      </div>
+
+      <div class="row" class="animate-fade-slide-in">
+
+        <div class="col ink" ui-sref="app.tallyCounter({count:0})" >
+          <span class="iconmenu icon ion-ios-pulse lightgreen myborder"></span>
+          <p>Tally Counter</p>
+        </div>
+        <div class="col ink" ui-sref="app.holiday()" >
+          <span class="iconmenu icon ion-speakerphone blue myborder"></span>
+          <p>Request Holiday</p>
+        </div>
+
+        <div class="col ink" ui-sref="app.training()" >
+          <span class="iconmenu icon ion-wand lightblue myborder"></span>
+          <p>Training</p>
+        </div>
+      </div>
+      <div class="row" class="animate-fade-slide-in">
+
+        <div class="col ink" ui-sref="app.payslips()" >
+          <span class="iconmenu icon ion-email yellow myborder"></span>
+          <p>Payslips</p>
+        </div>
+
+        <div class="col ink" ui-sref="app.checkcalls()" >
+          <span class="iconmenu icon ion-android-call purpel myborder"></span>
+          <p>Check Calls</p>
+        </div>
+
+        <div class="col ink" ui-sref="app.policies()">
+
+          <span class="iconmenu icon ion-briefcase red myborder"></span>
+          <p>Policy</p>
+        </div>
+      </div>
+      -->
+      <div class="row animate-fade-slide-in">
+
+        <div class="col ink" ui-sref="app.checkcalls()" ><!--<span class="badge badge-assertive payslips">0</span>-->
+          <span class="iconmenu icon ion-android-call purpel myborder"></span>
+          <p>Check Calls</p>
+        </div>
+
+        <div class="col ink" ng-controller="AuthCtrl"  ng-click="logout()">
+          <span class="iconmenu icon ion-log-out blue myborder"></span>
+          <p>Logout</p>
+        </div>
+
+      </div>
+      <!--<div class="row" ng-repeat="x in mainmenu" ng-if="$index%3==0" class="animate-fade-slide-in">
+        <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index].id})" ng-if="$index < mainmenu.length">
+          <span class="iconmenu icon {{mainmenu[$index].icon}}"></span>
+          <p>{{mainmenu[$index].title}}</p>
+        </div>
+        <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index+1].id})" ng-if="$index+1 < mainmenu.length">
+          <span class="iconmenu icon {{mainmenu[$index+1].icon}}"></span>
+          <p>{{mainmenu[$index+1].title}}</p>
+        </div>
+        <div class="col ink" ui-sref="app.dashlist({id: mainmenu[$index+2].id})" ng-if="$index+2 < mainmenu.length">
+          <span class="iconmenu icon {{mainmenu[$index+2].icon}}"></span>
+          <p>{{mainmenu[$index+2].title}}</p>
+        </div>
+      </div>-->
+
+  	</ion-list>
+  </ion-content>
+</ion-view>

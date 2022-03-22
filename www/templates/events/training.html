@@ -1,0 +1,16 @@
+<ion-view view-title="Training">
+	<ion-content class="">
+		<div class="list card">
+			<h4 class="border-top positive-bg padding center">Train Your Self</h4>
+			<div class="list">
+				<a class="item calm-border padding item-icon-right" ng-repeat="x in data" ng-click="video({id:x.id})">
+					{{x.title}}
+					<i class="icon ion-ios-arrow-thin-right"></i>
+				</a>
+			</div>
+			<div class="text-center padding assertive" ng-if="data.length == 0">No Item Found!</div>
+		</div>
+
+	</ion-content>
+</ion-view>
+

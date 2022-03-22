@@ -1,0 +1,44 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <div class="logo-container">
+        <img class="logo-image" ng-src="./img/icon.png"/>
+        <!--<b style="color: white;font-size: 30px; font-weight: bold;margin-left: 20px">BAZAR</b>-->
+      </div>
+      <ion-nav-buttons side="right">
+          <button class="button-full no-border button-assertive" ng-click="popover.show($event)">
+           Language
+          </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <!--<ion-side-menu side="right">
+    <ion-header-bar class="dark-bg">
+        <div class="usermenu" ng-if="!datalogin.id" ng-click="showLogin();">
+            <div class="avatar"></div>
+            <h2>Security Guards</h2>
+        </div>
+        <div class="usermenu" ng-if="datalogin.id">
+            <div class="avatar" style="background-image: url({{datalogin.picture}});"></div>
+            <h2>{{datalogin.name}}</h2>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list class="menulist">
+        <div ng-repeat="x in mainmenu">
+          <ion-item class="item-divider">
+            {{x.title}}
+          </ion-item>
+          <ion-item ng-repeat="y in x.submenu" menu-close ui-sref="{{y.state}}" class="ink item-icon-left">
+            <span class="icon {{y.icon}}"></span>
+            {{y.title}}
+          </ion-item>
+        </div>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>-->
+</ion-side-menus>

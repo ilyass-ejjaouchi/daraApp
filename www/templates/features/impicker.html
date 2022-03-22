@@ -1,0 +1,8 @@
+<ion-view view-title="Image Picker">
+  <ion-content class="padding" scroll="false">
+  	<button class="button button-energized button-block" ng-click="addMedia()">Add images</button>
+  	<ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
+      <img ng-repeat="x in images" ng-src="{{x}}" style="height:200px; padding: 5px 5px 5px 5px;"/>
+    </ion-scroll>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,14 @@
+<ion-view view-title="Load More Infinitely">
+  <ion-content class="">
+    <ion-list>
+      <ion-item ng-repeat="x in data" class="item-thumbnail-left">
+        <img ng-src="{{x.picture.medium}}">
+        <h2>{{x.name.title}} {{x.name.first}} {{x.name.last}}</h2>
+        <p>{{x.email}}</p>
+        <p>{{x.location.city}}</p>
+        <p>{{x.phone}}</p>            
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadmore()" distance="10%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

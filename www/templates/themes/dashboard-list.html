@@ -1,0 +1,11 @@
+<ion-view view-title="{{data.title}}">
+  <ion-content>
+    <ion-list class="menulist animate-ripple">
+      <ion-item ng-repeat="x in data.submenu" class="item ink item-icon-left item-icon-right" ui-sref="{{x.state}}">
+        <i class="icon {{x.icon}}"></i>
+        {{x.title}}
+        <i class="icon ion-ios-arrow-right"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

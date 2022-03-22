@@ -1,0 +1,32 @@
+<ion-view view-title="Daily Occurrence Book">
+  <ion-content class="">
+    <ion-list class="list-with-border">
+      <ion-item ng-if="!isCompany">
+
+
+        <form name="newEntryForm" ng-submit="addItem(newEntryForm)" novalidate>
+          <button type="button" class="button button-raised button-stable button-calm ink-dark icon ion-plus" ng-model="newEntry" ng-click="newEntry = true">&nbsp;&nbsp;New Entry </button>
+          <div class="new-entry" ng-if="newEntry">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">New Entry</span>
+              <textarea ng-model="$parent.discription" placeholder="New Entry" rows="5" required></textarea>
+            </label>
+
+              <label class="item item-input item-floating-label" ng-click="openTimePicker()">
+                <input type="text" required ng-model="eventTime" value="{{eventTime}}" ng-readonly="true" placeholder="Event Time">
+              </label>
+            <button class="button button-balanced button-full" type="submit" ng-disabled="newEntryForm.$invalid">Submit</button>
+          </div>
+
+        </form>
+
+
+      </ion-item>
+      <ion-item class="daily-occurrence-item" ng-repeat="x in mydata">
+        <p ng-if="isCompany">{{x.discription}} --- From <b>{{x.guard_id}}</b> at Site:<b>{{x.site_id}}</b></p>
+        <p ng-if="!isCompany">{{x.discription}}</p>
+        <h2 class="pull-right"><span>Date: &nbsp; {{dateParse(x.created_at) | date:'dd-M-yyyy'}}</span>&nbsp;&nbsp;&nbsp; <span>Time: &nbsp; {{x.time | date:'hh:mm a'}}</span></h2>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

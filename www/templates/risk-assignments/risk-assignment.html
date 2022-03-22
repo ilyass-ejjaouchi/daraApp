@@ -1,0 +1,42 @@
+<ion-view ng-init="risksDetail()" view-title="Assignment Instructions">
+
+  <ion-header-bar class="bar-dark bar bar-header">
+    <div class="buttons">
+      <button ng-click="closeModal()" class="button back-button buttons button-clear header-item"><i class="icon ion-android-arrow-back"></i>
+        <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"></span></button>
+    </div>
+    <h1 class="title">Risk Assignments</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+
+      <span class="text-center padding"  ng-bind-html="detail.guardSite.risk_assignment"></span>
+    <button ng-if="detail.guardSite.doc_file" ng-controller="payslip" class="button button-balanced center" style="height: 20px;" ng-click="download2(detail.guardSite.doc_file)">Read Document</button>
+    <a style="margin-top: 30px;" class="button button-full button-dark" ui-sref="app.signature({backTo:'app.site-risk-assignment'})">
+      Signature
+    </a>
+    <!--<div class="row">
+      <div class="col">
+        <img ng-src='{{signature}}'/>
+      </div>
+    </div>-->
+
+
+    <form name="frm" ng-submit="riskConfirm(frm,detail.guardSite.site_id)" novalidate>
+      <div class="list">
+        <h5 class="text-center"><i class="ion-ios-calendar-outline"></i> {{ date | date:'dd-M-yyyy'}}</h5>
+      </div>
+
+      <div class="list">
+        <div class="item item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox" ng-model="understand" required>
+          </label>
+          I understand
+        </div>
+      </div>
+
+      <button class="button button-balanced button-full" ng-disabled="frm.$invalid">Submit</button>
+    </form>
+
+	</ion-content>
+</ion-view>

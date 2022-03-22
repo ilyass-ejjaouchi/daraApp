@@ -1,0 +1,52 @@
+<ion-view view-title="Visitor In">
+
+	<ion-content class="">
+		<style>
+			.datetime{
+				text-align: center !important;
+
+			}
+		</style>
+		<form novalidate="" name="frm">
+			<div class="list padding">
+				<div class="row">
+					<div class="col col-100">
+						<span>Visitor Name</span>
+						<label class="item item-input item-floating-label">
+							<input type="text" required ng-model="name" placeholder="Visitor Name">
+						</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Description of Visitor</span>
+							<textarea autocomplete="off" class="form-control" rows="5" required placeholder="Description of Visitor" name="description" ng-model="description"></textarea>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<span>Time</span>
+						<div class="item item-icon-left button button-full button-calm ink" style="text-align: center;padding-top: 5px" ion-datetime-picker time seconds am-pm ng-model="timeValue">
+							<strong>{{timeValue| date: "h:mm:ss a"}}</strong>
+						</div>
+					</div>
+				</div>
+				<!--<div class="row">
+					<div class="col">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Upload Picture</span>
+							<button class="button icon-left ion-upload" ng-click="uploadImage()">Upload Picture</button>
+						</label>
+					</div>
+				</div>-->
+			</div>
+			<div class="padding">
+				<button class="button button-full button-positive ink" type="submit" ng-click="addVisitor(frm)"  ng-disabled="frm.$invalid || image === null">Submit</button>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>
+

@@ -1,0 +1,68 @@
+<ion-view view-title="Incident Report">
+	<ion-content class="">
+		<form novalidate="" name="frm">
+			<div class="list padding">
+				<div class="row">
+					<div class="col col-60"  ng-click="openDatePicker()">
+						<span>Incident Date</span>
+						<label class="item item-input item-floating-label">
+							<input type="text" required ng-model="incidentDate" ng-readonly="true" value="{{incidentDate}}" placeholder="Incident Date">
+						</label>
+					</div>
+					<div class="col col-40" ng-click="openTimePicker()">
+						<span>Incident Time</span>
+						<label class="item item-input item-floating-label">
+							<input type="text" required ng-model="incidentTime" ng-readonly="true" value="{{incidentTime}}" placeholder="Incident Time">
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Description of Incident</span>
+							<textarea autocomplete="off" class="form-control" spellcheck="true" rows="5" required placeholder="Description of Incident" name="incidentDescription" ng-model="incidentDescription"></textarea>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Written By</span>
+							<input type="text" required ng-model="incidentWriter" name="incidentWriter" placeholder="Written By">
+						</label>
+					</div>
+				</div>
+				<a style="margin-top: 30px;" class="button button-full button-dark" ui-sref="app.signature({backTo:'app.incidents'})">
+					Signature
+				</a>
+				<!--<div class="row">
+					<div class="col">
+						<img ng-src='{{signature}}'/>
+					</div>
+				</div>-->
+
+				<!--<div class="row">
+					<div class="col">
+						<span>Date</span>
+						<label class="item item-input item-floating-label">
+							<input type="date">
+						</label>
+					</div>
+				</div>-->
+				<div class="row">
+					<div class="col">
+						<label class="item item-input item-floating-label">
+							<span class="input-label">Upload Picture</span>
+							<button class="button icon-left ion-upload" ng-click="uploadImage()">Upload Picture</button>
+						</label>
+					</div>
+					<img ng-if="image" ng-src="{{image}}" style="height:200px; padding: 5px;"/>
+				</div>
+			</div>
+			<div class="padding">
+				<button class="button button-full button-positive ink" type="submit" ng-click="submitIncident(frm)"  ng-disabled="frm.$invalid || image === null">Submit</button>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>
+

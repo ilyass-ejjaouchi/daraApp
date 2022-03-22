@@ -1,0 +1,14 @@
+<ion-view view-title="Sites">
+  <ion-content class="">
+    <ion-list>
+      <ion-item ng-repeat="x in data" ng-click="risksDetail({siteid : x.guardSiteDetail.id})"> <!--class="item-thumbnail-left"-->
+        <!--<img ng-src="{{x.picture.medium}}">-->
+        <h2>{{dateParse(x.guardSite.date) | date:'EEEE dd/MM/yyyy'}}</h2>
+        <p>Start time: {{x.guardShift.start_time}} &nbsp;&nbsp;&nbsp; Finish time: {{x.guardShift.end_time}}</p>
+        <p>Address: {{x.guardSiteDetail.location}}.
+          Distance from current location:</p>
+        <!--<p>{{x.phone}}</p>-->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
